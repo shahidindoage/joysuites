@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JoySuits</title>
+    <title>JoySuite</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
   
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+<!-- <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet"> -->
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   </head>
 <body data-barba="wrapper">
@@ -25,9 +25,9 @@
 <div id="loader">
   <div class="loader-content">
     <div class="logo-name">
-      <h1 class="site-name kings-regular">JOUSUITES</h1>
+      <h1 class="site-name playfair">JOYSUITE</h1>
     </div>
-    <h3 class="subheading">Find Your Perfect Property</h3>
+    <h3 class="subheading DM">Find Your Perfect Property</h3>
     <div class="line-loader">
       <div class="line"></div>
     </div>
@@ -52,7 +52,7 @@
         <header>
           <div class="header-content">
             <div class="header-content-inner">
- <div class="logo kings-regular"><a href="index.html">JOUSUITES</a></div>
+ <div class="logo playfair"><a href="index.html">JOYSUITE</a></div>
         
             <!-- Menu Toggle Button -->
             <button class="menu-toggle" id="menuBtn" aria-label="Menu">
@@ -67,9 +67,9 @@
         </header>
         
         <!-- Fullscreen Navigation -->
-        <nav class="fullscreen-nav kings-regular" id="fullscreenNav">
+        <nav class="fullscreen-nav playfair" id="fullscreenNav">
           <a href="#">Stay</a>
-          <a href="#">Golf</a>
+          <a href="#">Property</a>
           <a href="#">Ownership</a>
           <a href="#">Events</a>
           <a href="about.html">About</a>
@@ -98,25 +98,31 @@
 
   <!-- Overlay Text -->
   <div class="hero-text">
-    <h1 class="kings-regular">Find Your Perfect Property</h1>
-    <h2>Welcome to Joysuits</h2>
+    <h2 class="DM" style="font-size: 20px;">Welcome to JoySuite Hospitality</h2>
+    <h1 class="playfair" style="font-size: 60px; margin-top: -10px;">Crafting Exceptional Luxury Experiences</h1>
+    <div class="cta-container-hover hero-cta DM">
+                  <a href="#" class="learn-more-cta " style="color: white;">Learn More</a>
+                  <a href="#" class="animated-arrow-button" style="color: white;border-color: white;"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
   </div>
 </section>
 
 
   
           <section class="content-section" data-scroll-section>
-              <h2>Joysuits</h2>
-              <p class="course">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.</p>
-              <div class="cta-container-hover">
+              <h2 class="playfair">JoySuite</h2>
+              <p class="course DM">JoySuite Hospitality is a premium hospitality brand dedicated to managing and operating high-end luxury properties. With a commitment to service excellence, refined standards, and guest-centric experiences, JoySuite delivers elevated hospitality rooted in comfort, elegance, and attention to detail.</p>
+              <div class="cta-container-hover DM">
                   <a href="#" class="learn-more-cta">Learn More</a>
                   <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
               </div>
           </section>
   
-  <section class="image-slider-section slider-1" data-scroll-section>
+  <section class="slider-1-outer" data-scroll-section>
+    
+    <div class="image-slider-section slider-1">
     <div class="slider-left">
-      <h2>New & Exciting at Joysuits</h2>
+      <h2 class="playfair">About JoySuite Hospitality</h2>
       <!-- Arrow buttons -->
       <div class="slider-arrows">
         <button class="slider-prev">
@@ -138,7 +144,8 @@
       </div>
       <div class="divider"></div>
     </div>
-  
+  <p class="slider-left-p DM">JoySuite Hospitality specializes in the management and operation of 5-star luxury hospitality properties across distinctive destinations. Our philosophy is built on:
+
     <div class="slider-right">
       <!-- Glide Slider -->
       <div class="glide">
@@ -147,10 +154,12 @@
             <li class="glide__slide">
               <div class="image-item">
                 <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
-                <div class="image-item-content">
-                  <h3>The Karoo</h3>
-                  <p> Lorem Ipsum is not simply random text.</p>
-                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                <div class="image-item-content" style="height: 174px;">
+                  <h3 class="playfair">Personalized guest experiences</h3>
+                  <!-- <p> Lorem Ipsum is not simply random text.</p> -->
+                <div class="outer-arrow">
+ <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                 </div>
                 </div>
                 <div class="loader-line"></div>
               </div>
@@ -158,21 +167,26 @@
             <li class="glide__slide">
               <div class="image-item">
                 <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/08/CCB_BestCourse-960x960.jpg" alt="Golfer on a green">
-                <div class="image-item-content">
-                  <h3>The Roost</h3>
-                  <p> Lorem Ipsum is not simply random text.</p>
-                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
-                </div>
+                <div class="image-item-content" style="height: 174px;">
+                  <h3 class="playfair">Operational excellence</h3>
+                  
+                  <!-- <p> Lorem Ipsum is not simply random text.</p> -->
+                 <div class="outer-arrow">
+ <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                 </div>
+                  </div>
                 <div class="loader-line"></div>
               </div>
             </li>
             <li class="glide__slide">
               <div class="image-item">
                 <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/08/CCB_Packages-960x960.jpg" alt="Sunrise over the golf course">
-                <div class="image-item-content">
-                  <h3>The Wedge</h3>
-                  <p> Lorem Ipsum is not simply random text.</p>
-                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                <div class="image-item-content" style="height: 174px;">
+                  <h3 class="playfair">Luxury service standards</h3>
+                  <!-- <p> Lorem Ipsum is not simply random text.</p> -->
+                <div class="outer-arrow">
+ <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                 </div>
                 </div>
                 <div class="loader-line"></div>
               </div>
@@ -180,10 +194,12 @@
             <li class="glide__slide">
               <div class="image-item">
                 <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/08/CCB_Activities-960x960.jpg" alt="Golf course scenery">
-                <div class="image-item-content">
-                  <h3>Practice Facilities</h3>
-                  <p> Lorem Ipsum is not simply random text.</p>
-                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                <div class="image-item-content" style="height: 174px;">
+                  <h3 class="playfair">Sustainable and nature-conscious hospitality</h3>
+                  <!-- <p> Lorem Ipsum is not simply random text.</p> -->
+                <div class="outer-arrow">
+ <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                 </div>
                 </div>
                 <div class="loader-line"></div>
               </div>
@@ -193,6 +209,10 @@
         </div>
       </div>
     </div>
+    </div>
+    <p class="DM" style="padding-bottom: 80px;    padding-top: 40px;">Every property managed by JoySuite reflects warmth, refinement, and memorable service.
+</p>
+     
   </section>
   
   
@@ -200,8 +220,10 @@
   
            <section class="content-section text-and-image" data-scroll-section>
                <div class="text-content">
-                  <h2>Stay With Us</h2>
-                  <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
+                  <h2 class="playfair">Our Signature 5-Star Property in Mulshi</h2>
+                  <p class="DM">Located in the tranquil landscapes of Mulshi, Maharashtra, JoySuite proudly manages a 5-star luxury hospitality property surrounded by forests, serene views, and natural beauty.
+<br/><br/>
+Designed for travelers seeking exclusivity and relaxation, the property offers privacy, sophistication, and curated luxury experiences in harmony with nature.</p>
                   <div class="cta-container-hover1">
                     <a href="#" class="learn-more-cta">Learn More</a>
                     <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
@@ -212,9 +234,12 @@
               </div>
           </section>
   
-          <section class="image-slider-section slider-2 image-grid-hover " data-scroll-section>
-            <div class="slider-left">
-              <h2>New & Exciting at JoySuits</h2>
+          <section class="slider-2-outer"  data-scroll-section>
+            <div class="image-slider-section slider-2 image-grid-hover ">
+ <div class="slider-left">
+              <h2>Accommodation Experience</h2>
+              <p style="line-height: 28px;">JoySuite Hospitality specializes in the management and operation of 5-star luxury hospitality properties across distinctive destinations. Our philosophy is built on:
+
               <!-- Arrow buttons -->
               <div class="slider-arrows">
                 <button class="slider-prev">
@@ -245,8 +270,8 @@
                       <div class="image-item">
                         <img class="slider-2-img"  src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" alt="Cozy living room">
                         <div class="image-item-content">
-                            <h3>Cottage Comforts</h3>
-                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <h3>Deluxe Rooms</h3>
+                            <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
                             <a href="#" class="learn-more-cta">Learn More</a>
                             <div class="loader-line"></div>
                           </div>
@@ -257,8 +282,8 @@
                       <div class="image-item">
                         <img class="slider-2-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Modern house exterior">
                         <div class="image-item-content">
-                            <h3>Unwind and Relax</h3>
-                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <h3>Premium Rooms with Scenic Views</h3>
+                            <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
                             <a href="#" class="learn-more-cta">Learn More</a>
                             <div class="loader-line"></div>
                           </div>
@@ -268,36 +293,89 @@
               <div class="image-item">
                 <img class="slider-2-img"  src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071&auto=format&fit=crop" alt="Bedroom with a view">
                 <div class="image-item-content">
-                    <h3>Stunning Views</h3>
-                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <h3>Private Villas with Spacious Terraces</h3>
+                    <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
                     <a href="#" class="learn-more-cta">Learn More</a>
                     <div class="loader-line"></div>
                   </div>
             </div>
                     </li>
                 
-                   
+                   <li class="glide__slide">
+                     
+              <div class="image-item">
+                <img class="slider-2-img"  src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071&auto=format&fit=crop" alt="Bedroom with a view">
+                <div class="image-item-content">
+                    <h3>Signature Suites with Jacuzzi</h3>
+                    <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
+                    <a href="#" class="learn-more-cta">Learn More</a>
+                    <div class="loader-line"></div>
+                  </div>
+            </div>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
+           
+            </div>
+             <p class="slider-2-p" style="padding-bottom: 80px;    padding-top: 40px;">Each accommodation is crafted to provide comfort, privacy, and refined luxury.
+</p>
           </section>
           
   
-          <section class="discover-more" data-scroll-section>
-              <h2>Discover More</h2>
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-              <a href="#" class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></a>
-          </section>
+         <section class="dining-section">
+  <div class="dining-container">
+    <!-- Heading -->
+    <div class="dining-header">
+      <h2>Dining Experiences</h2>
+      <p class="dining-subtitle">
+        JoySuite curates exceptional dining experiences through:
+      </p>
+    </div>
+
+    <!-- Feature Cards -->
+    <div class="dining-features">
+      <div class="feature-card">
+        <h3>All-day Dining</h3>
+        <p>Global and regional cuisine crafted to perfection.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Outdoor Grill</h3>
+        <p>Scenic outdoor grill experiences for a relaxed ambiance.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Lounge & Bar</h3>
+        <p>Handcrafted cocktails in a stylish and comfortable setting.</p>
+      </div>
+    </div>
+
+    <!-- Bottom Paragraph -->
+    <p class="dining-text">
+      Every culinary offering is designed to delight and inspire, combining exquisite flavors, impeccable service, and a refined atmosphere.
+    </p>
+  </div>
+</section>
+
+
   
-          <section class="image-grid" data-scroll-section>
-           <div class="img-grid-inner">
+          <section class="slider-1-outer" data-scroll-section>
+    
+    <div class="image-slider-section slider-1 image-gird" style="background-color: #f9f1eb;">
+    <div class="slider-left">
+      <h2 class="playfair">Wellness & Leisure</h2>
+     
+      <div class="divider"></div>
+    </div>
+  <p class="slider-left-p DM" style="background-color: #f9f1eb;">Guests can enjoy rejuvenating experiences including:
+
+     <div class="img-grid-inner" style="padding: 0rem 3rem;     margin-left: -3%;">
             <div class="image-item">
               <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
               <div class="image-item-content">
-                <h3>The Karoo</h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                <h3>Luxury spa and wellness center</h3>
+                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
+                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
               </div>
               <div class="loader-line"></div>
               <div class="loader-line1"></div>
@@ -305,9 +383,9 @@
             <div class="image-item">
               <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
               <div class="image-item-content">
-                <h3>The Karoo</h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                <h3>Infinity swimming pool</h3>
+                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
+                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
               </div>
               <div class="loader-line"></div>
               <div class="loader-line1"></div>
@@ -315,18 +393,30 @@
             <div class="image-item">
               <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
               <div class="image-item-content">
-                <h3>The Karoo</h3>
-                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                <h3>Yoga and meditation spaces</h3>
+                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
+                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
+              </div>
+              <div class="loader-line"></div>
+              <div class="loader-line1"></div>
+            </div>
+            <div class="image-item">
+              <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
+              <div class="image-item-content">
+                <h3>Guided nature walks and outdoor activities</h3>
+                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
+                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
               </div>
               <div class="loader-line"></div>
               <div class="loader-line1"></div>
             </div>
            </div>
-            
-          </section>
+    </div>
+    <p class="DM" style="background-color: #f9f1eb;"></p>
+     
+  </section>
   
-          <section class="content-section text-and-image reverse" data-scroll-section>
+          <!-- <section class="content-section text-and-image reverse" data-scroll-section>
               <div class="text-content">
                  <h2>Book Your
                   Golf Trip Today!</h2>
@@ -339,45 +429,114 @@
              <div class="image-content">
                  <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/07/Untitled-design-1-960x540.png" alt="Person writing in a journal">
              </div>
-         </section>
+         </section> -->
   
+<!-- Events & Corporate Experiences Section -->
+<section class="events-section">
+  <div class="events-content">
+    <div class="events-text">
+      <h2>Events & Corporate Experiences</h2>
+      <p>JoySuite manages a wide range of events, including:</p>
+      <ul class="events-list">
+        <li><span class="bullet"></span>Destination weddings</li>
+        <li><span class="bullet"></span>Corporate retreats and offsites</li>
+        <li><span class="bullet"></span>Private celebrations and social gatherings</li>
+      </ul>
+      <p>With tailored planning and seamless execution, every event is elevated to a memorable experience.</p>
+    </div>
+    <div class="events-image">
+      <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Events & Corporate Experiences">
+    </div>
+  </div>
+</section>
+
+
+
+
          <section class="guest-gallery" data-scroll-section>
-          <h2>Guest Gallery</h2>
+          <h2>Why Mulshi</h2>
+           <p class_="gallery-cta">Mulshi is among Maharashtra’s most sought-after luxury escape destinations, offering:</p>
+     
           <div class="gallery-grid">
               <div class="gallery-item">
                   <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop" alt="Guest photo 1">
                   <div class="gallery-item-overlay">
-                      <i class="fab fa-instagram"></i>
+                      <div class="image-item-content">
+                            <h3>Serene lake views</h3>
+                          
+                          </div>
                   </div>
               </div>
               <div class="gallery-item">
                   <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" alt="Guest photo 2">
                   <div class="gallery-item-overlay">
-                      <i class="fab fa-instagram"></i>
+                       <div class="image-item-content">
+                            <h3>Forest trails and waterfalls</h3>
+                          
+                          </div>
                   </div>
               </div>
               <div class="gallery-item">
                   <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Guest photo 3">
                   <div class="gallery-item-overlay">
-                      <i class="fab fa-instagram"></i>
+                     <div class="image-item-content">
+                            <h3>Scenic viewpoints</h3>
+                          
+                          </div>
                   </div>
               </div>
               <div class="gallery-item">
                   <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" alt="Guest photo 4">
                   <div class="gallery-item-overlay">
-                      <i class="fab fa-instagram"></i>
+                      <div class="image-item-content">
+                            <h3>Peaceful natural surroundings</h3>
+                          
+                          </div>
                   </div>
               </div>
           </div>
-          <p class_="gallery-cta">Share your moments with us! Tag @JoySuits and use #JoyLife for a chance to be featured.</p>
+          <p class_="gallery-cta">JoySuite designs immersive experiences that allow guests to connect with the region’s beauty.</p>
       </section>
+     <section class="contact-luxury">
+  <div class="container">
+
+    <div class="contact-intro">
+      <h2>Connect With JoySuite Hospitality</h2>
+      <p>
+        Partner with a hospitality brand that understands luxury, service, and excellence.
+      </p>
+    </div>
+
+    <form class="luxury-form">
+      <div class="form-row">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+      </div>
+
+      <div class="form-row">
+        <input type="tel" placeholder="Phone Number">
+      </div>
+
+      <textarea placeholder="Your Message" rows="3"></textarea>
+
+      <button type="submit">Contact Us</button>
+    </form>
+
+    <!-- <div class="contact-details">
+      <span>📱 Phone: Will confirm you on this</span>
+      <span>📧 Email: Will confirm you on this</span>
+    </div> -->
+
+  </div>
+</section>
+
       <footer data-scroll-section>
         <div class="footer-content">
             <div class="footer-section">
                 <h3>Explore</h3>
                 <ul>
                     <li><a href="#">Stay</a></li>
-                    <li><a href="#">Golf</a></li>
+                    <li><a href="#">Property</a></li>
                     <li><a href="#">Ownership</a></li>
                     <li><a href="#">Events</a></li>
                 </ul>
@@ -415,7 +574,7 @@
 </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Joysuits. All Rights Reserved.</p>
+            <p>&copy; 2026 Joysuite. All Rights Reserved.</p>
         </div>
     </footer>
       </div>
