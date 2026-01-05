@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoySuits</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  </head>
+<body data-barba="wrapper">
+
+  <div id="page-overlay"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="logo-name">
+      <h1 class="site-name kings-regular">JOUSUITES</h1>
+    </div>
+    <h3 class="subheading">Find Your Perfect Property</h3>
+    <div class="line-loader">
+      <div class="line"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Stair Transition -->
+<div class="stair-transition">
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+
+
+  <div id="scrollbar">
+    <div id="thumb"></div> <!-- real thumb element -->
+  </div>
+ 
+  
+        <header>
+          <div class="header-content">
+            <div class="header-content-inner">
+ <div class="logo kings-regular"><a href="index.html">JOUSUITES</a></div>
+        
+            <!-- Menu Toggle Button -->
+            <button class="menu-toggle" id="menuBtn" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            </div>
+            <div class="divider1"></div>
+           
+          </div>
+          
+        </header>
+        
+        <!-- Fullscreen Navigation -->
+        <nav class="fullscreen-nav kings-regular" id="fullscreenNav">
+          <a href="#">Stay</a>
+          <a href="#">Golf</a>
+          <a href="#">Ownership</a>
+          <a href="#">Events</a>
+          <a href="about.html">About</a>
+        </nav>
+      <div id="page" data-barba="container" data-barba-namespace="home">
+        <!-- ALL your sections go here -->
+
+        
+        
+          <section class="hero" data-scroll-section>
+              <video autoplay loop muted playsinline>
+                  <source src="https://api.cabotcapebreton.com/wp-content/uploads/2021/05/Cabot_Home_Desktop_Smaller.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+              </video>
+              <div class="hero-text">
+                  <h1 class="kings-regular">About</h1>
+                  <!-- <h2>Welcome to Cabot Citrus Farms</h2> -->
+              </div>
+          </section>
+  
+         <section style="height: 500px;background-color: #F9F1EB;">
+
+
+         </section>
+  
+      <footer data-scroll-section>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Stay</a></li>
+                    <li><a href="#">Golf</a></li>
+                    <li><a href="#">Ownership</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Golf Course Lane<br>Citrus Farms, FL 12345</p>
+                <p>info@joysuits.com</p>
+                <p>(123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+  <h3>Follow Us</h3>
+  <div class="social-links">
+    <a href="#" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="#" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="#" aria-label="Twitter">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="#" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+  </div>
+</div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Joysuits. All Rights Reserved.</p>
+        </div>
+    </footer>
+      </div>
+    
+   
+
+    <script>
+      // Select all slider sections
+      const sliderSections = document.querySelectorAll('.image-slider-section');
+    
+      sliderSections.forEach(section => {
+        const glideEl = section.querySelector('.glide');
+        if (!glideEl) return;
+    
+        // Count slides dynamically
+        const slidesCount = glideEl.querySelectorAll('.glide__slide').length;
+    
+        // Update total slides counter
+        const totalEl = section.querySelector('.total-slides');
+        if (totalEl) totalEl.textContent = slidesCount;
+    
+        // Initialize Glide
+        const glide = new Glide(glideEl, {
+          type: 'carousel',
+          perView: 4,
+          gap: 24,
+          // autoplay: 3000,
+          hoverpause: true,
+          animationDuration: 800,
+          breakpoints: {
+            1200: { perView: 4 },
+            992: { perView: 3 },
+            576: { perView: 2 },
+            0: { perView: 1 }
+          }
+        });
+    
+        glide.mount();
+    
+        // Counter element
+        const counterEl = section.querySelector('.counter-number');
+        if (counterEl) counterEl.textContent = 1; // start at 1
+    
+        // Animate counter on slide change
+        function animateCounter(newIndex) {
+          if (!counterEl) return;
+    
+          counterEl.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+          counterEl.style.transform = 'translateY(50%)';
+          counterEl.style.opacity = '0';
+    
+          setTimeout(() => {
+            counterEl.textContent = newIndex + 1;
+            counterEl.style.transform = 'translateY(-50%)';
+            counterEl.style.opacity = '1';
+    
+            setTimeout(() => {
+              counterEl.style.transform = 'translateY(0)';
+            }, 200);
+          }, 50);
+        }
+    
+        // Update counter on slide change
+        glide.on('run', () => {
+          animateCounter(glide.index % slidesCount);
+        });
+    
+        // Arrow buttons for this slider only
+        const nextBtn = section.querySelector('.slider-next');
+        const prevBtn = section.querySelector('.slider-prev');
+    
+        if (nextBtn) nextBtn.addEventListener('click', () => glide.go('>'));
+        if (prevBtn) prevBtn.addEventListener('click', () => glide.go('<'));
+      });
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.25/bundled/lenis.min.js"></script>
+
+<script>
+ // Initialize Lenis
+window.lenis = new Lenis({
+  duration: 1.2,
+  easing: t => t,
+  smooth: true
+});
+
+
+// Custom scrollbar
+const scrollbar = document.getElementById('scrollbar');
+const thumb = document.getElementById('thumb');
+
+function updateScrollbar() {
+  const scrollHeight = document.body.scrollHeight - window.innerHeight;
+  const thumbHeight = Math.max((window.innerHeight / document.body.scrollHeight) * window.innerHeight, 50);
+  thumb.style.height = `${thumbHeight}px`;
+
+  const scrollPercent = lenis.scroll / scrollHeight;
+  const translateY = scrollPercent * (window.innerHeight - thumbHeight);
+  thumb.style.transform = `translateY(${translateY}px)`;
+}
+
+// RAF loop for Lenis
+function raf(time) {
+  lenis.raf(time);
+  updateScrollbar();
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+</script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="transition.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

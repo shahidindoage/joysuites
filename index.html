@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoySuits</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  </head>
+<body data-barba="wrapper">
+
+  <div id="page-overlay"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="logo-name">
+      <h1 class="site-name kings-regular">JOUSUITES</h1>
+    </div>
+    <h3 class="subheading">Find Your Perfect Property</h3>
+    <div class="line-loader">
+      <div class="line"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Stair Transition -->
+<div class="stair-transition">
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+
+
+  <div id="scrollbar">
+    <div id="thumb"></div> <!-- real thumb element -->
+  </div>
+ 
+        <header>
+          <div class="header-content">
+            <div class="header-content-inner">
+ <div class="logo kings-regular"><a href="index.html">JOUSUITES</a></div>
+        
+            <!-- Menu Toggle Button -->
+            <button class="menu-toggle" id="menuBtn" aria-label="Menu">
+              <i class="fa-solid fa-bars"></i>
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+            </div>
+            <div class="divider1"></div>
+           
+          </div>
+          
+        </header>
+        
+        <!-- Fullscreen Navigation -->
+        <nav class="fullscreen-nav kings-regular" id="fullscreenNav">
+          <a href="#">Stay</a>
+          <a href="#">Golf</a>
+          <a href="#">Ownership</a>
+          <a href="#">Events</a>
+          <a href="about.html">About</a>
+        </nav>
+        
+      <div id="page" data-barba="container" data-barba-namespace="home">
+        <!-- ALL your sections go here -->
+
+        
+       <section class="hero hero-slider" data-scroll-section>
+  <div class="glide hero-glide">
+    <div class="glide__track" data-glide-el="track">
+      <ul class="glide__slides">
+        <li class="glide__slide">
+          <img src="bg.jpg" alt="Hero Image 1" />
+        </li>
+        <li class="glide__slide">
+          <img src="bg2.jpg" alt="Hero Image 2" />
+        </li>
+        <li class="glide__slide">
+          <img src="bg3.jpg" alt="Hero Image 3" />
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay Text -->
+  <div class="hero-text">
+    <h1 class="kings-regular">Find Your Perfect Property</h1>
+    <h2>Welcome to Joysuits</h2>
+  </div>
+</section>
+
+
+  
+          <section class="content-section" data-scroll-section>
+              <h2>Joysuits</h2>
+              <p class="course">Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words.</p>
+              <div class="cta-container-hover">
+                  <a href="#" class="learn-more-cta">Learn More</a>
+                  <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+          </section>
+  
+  <section class="image-slider-section slider-1" data-scroll-section>
+    <div class="slider-left">
+      <h2>New & Exciting at Joysuits</h2>
+      <!-- Arrow buttons -->
+      <div class="slider-arrows">
+        <button class="slider-prev">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+  
+        <!-- Counter -->
+        <span class="slider-counter">
+          <span class="counter-mask">
+            <span class="counter-number">1</span>
+          </span>
+          /
+          <span class="total-slides">4</span>
+        </span>
+  
+        <button class="slider-next">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+      <div class="divider"></div>
+    </div>
+  
+    <div class="slider-right">
+      <!-- Glide Slider -->
+      <div class="glide">
+        <div class="glide__track" data-glide-el="track">
+          <ul class="glide__slides">
+            <li class="glide__slide">
+              <div class="image-item">
+                <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
+                <div class="image-item-content">
+                  <h3>The Karoo</h3>
+                  <p> Lorem Ipsum is not simply random text.</p>
+                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+                <div class="loader-line"></div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="image-item">
+                <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/08/CCB_BestCourse-960x960.jpg" alt="Golfer on a green">
+                <div class="image-item-content">
+                  <h3>The Roost</h3>
+                  <p> Lorem Ipsum is not simply random text.</p>
+                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+                <div class="loader-line"></div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="image-item">
+                <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/08/CCB_Packages-960x960.jpg" alt="Sunrise over the golf course">
+                <div class="image-item-content">
+                  <h3>The Wedge</h3>
+                  <p> Lorem Ipsum is not simply random text.</p>
+                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+                <div class="loader-line"></div>
+              </div>
+            </li>
+            <li class="glide__slide">
+              <div class="image-item">
+                <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/08/CCB_Activities-960x960.jpg" alt="Golf course scenery">
+                <div class="image-item-content">
+                  <h3>Practice Facilities</h3>
+                  <p> Lorem Ipsum is not simply random text.</p>
+                  <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+                <div class="loader-line"></div>
+              </div>
+            </li>
+           
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  
+           <section class="content-section text-and-image" data-scroll-section>
+               <div class="text-content">
+                  <h2>Stay With Us</h2>
+                  <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage.</p>
+                  <div class="cta-container-hover1">
+                    <a href="#" class="learn-more-cta">Learn More</a>
+                    <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+                </div>
+              </div>
+              <div class="image-content">
+                  <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/07/Untitled-design-1-960x540.png" alt="Modern cottage interior">
+              </div>
+          </section>
+  
+          <section class="image-slider-section slider-2 image-grid-hover " data-scroll-section>
+            <div class="slider-left">
+              <h2>New & Exciting at JoySuits</h2>
+              <!-- Arrow buttons -->
+              <div class="slider-arrows">
+                <button class="slider-prev">
+                  <i class="fa-solid fa-arrow-left"></i>
+                </button>
+          
+                <!-- Counter -->
+                <span class="slider-counter">
+                  <span class="counter-mask">
+                    <span class="counter-number">1</span>
+                  </span>
+                  /
+                  <span class="total-slides">4</span>
+                </span>
+          
+                <button class="slider-next">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          
+            <div class="slider-right">
+              <!-- Glide Slider -->
+              <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                      <div class="image-item">
+                        <img class="slider-2-img"  src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" alt="Cozy living room">
+                        <div class="image-item-content">
+                            <h3>Cottage Comforts</h3>
+                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <a href="#" class="learn-more-cta">Learn More</a>
+                            <div class="loader-line"></div>
+                          </div>
+                        
+                    </div>
+                    </li>
+                    <li class="glide__slide">
+                      <div class="image-item">
+                        <img class="slider-2-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Modern house exterior">
+                        <div class="image-item-content">
+                            <h3>Unwind and Relax</h3>
+                            <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                            <a href="#" class="learn-more-cta">Learn More</a>
+                            <div class="loader-line"></div>
+                          </div>
+                    </li>
+                    <li class="glide__slide">
+                     
+              <div class="image-item">
+                <img class="slider-2-img"  src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071&auto=format&fit=crop" alt="Bedroom with a view">
+                <div class="image-item-content">
+                    <h3>Stunning Views</h3>
+                    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                    <a href="#" class="learn-more-cta">Learn More</a>
+                    <div class="loader-line"></div>
+                  </div>
+            </div>
+                    </li>
+                
+                   
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+  
+          <section class="discover-more" data-scroll-section>
+              <h2>Discover More</h2>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+              <a href="#" class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></a>
+          </section>
+  
+          <section class="image-grid" data-scroll-section>
+           <div class="img-grid-inner">
+            <div class="image-item">
+              <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
+              <div class="image-item-content">
+                <h3>The Karoo</h3>
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+              <div class="loader-line"></div>
+              <div class="loader-line1"></div>
+            </div>
+            <div class="image-item">
+              <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
+              <div class="image-item-content">
+                <h3>The Karoo</h3>
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+              <div class="loader-line"></div>
+              <div class="loader-line1"></div>
+            </div>
+            <div class="image-item">
+              <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
+              <div class="image-item-content">
+                <h3>The Karoo</h3>
+                <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+                <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+              <div class="loader-line"></div>
+              <div class="loader-line1"></div>
+            </div>
+           </div>
+            
+          </section>
+  
+          <section class="content-section text-and-image reverse" data-scroll-section>
+              <div class="text-content">
+                 <h2>Book Your
+                  Golf Trip Today!</h2>
+                 <p>Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words</p>
+                 <div class="cta-container-hover1">
+                  <a href="#" class="learn-more-cta">Make a Reservation</a>
+                  <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+              </div>
+             </div>
+             <div class="image-content">
+                 <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/07/Untitled-design-1-960x540.png" alt="Person writing in a journal">
+             </div>
+         </section>
+  
+         <section class="guest-gallery" data-scroll-section>
+          <h2>Guest Gallery</h2>
+          <div class="gallery-grid">
+              <div class="gallery-item">
+                  <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=1974&auto=format&fit=crop" alt="Guest photo 1">
+                  <div class="gallery-item-overlay">
+                      <i class="fab fa-instagram"></i>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" alt="Guest photo 2">
+                  <div class="gallery-item-overlay">
+                      <i class="fab fa-instagram"></i>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Guest photo 3">
+                  <div class="gallery-item-overlay">
+                      <i class="fab fa-instagram"></i>
+                  </div>
+              </div>
+              <div class="gallery-item">
+                  <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" alt="Guest photo 4">
+                  <div class="gallery-item-overlay">
+                      <i class="fab fa-instagram"></i>
+                  </div>
+              </div>
+          </div>
+          <p class_="gallery-cta">Share your moments with us! Tag @JoySuits and use #JoyLife for a chance to be featured.</p>
+      </section>
+      <footer data-scroll-section>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Stay</a></li>
+                    <li><a href="#">Golf</a></li>
+                    <li><a href="#">Ownership</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Golf Course Lane<br>Citrus Farms, FL 12345</p>
+                <p>info@joysuits.com</p>
+                <p>(123) 456-7890</p>
+            </div>
+             <div class="footer-section">
+  <h3>Follow Us</h3>
+  <div class="social-links">
+    <a href="#" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="#" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="#" aria-label="Twitter">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="#" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+  </div>
+</div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Joysuits. All Rights Reserved.</p>
+        </div>
+    </footer>
+      </div>
+     
+   
+
+    <script>
+      // Select all slider sections
+      const sliderSections = document.querySelectorAll('.image-slider-section');
+    
+      sliderSections.forEach(section => {
+        const glideEl = section.querySelector('.glide');
+        if (!glideEl) return;
+    
+        // Count slides dynamically
+        const slidesCount = glideEl.querySelectorAll('.glide__slide').length;
+    
+        // Update total slides counter
+        const totalEl = section.querySelector('.total-slides');
+        if (totalEl) totalEl.textContent = slidesCount;
+    
+        // Initialize Glide
+        const glide = new Glide(glideEl, {
+          type: 'carousel',
+          perView: 4,
+          gap: 24,
+          // autoplay: 3000,
+          hoverpause: true,
+          animationDuration: 800,
+          breakpoints: {
+            1200: { perView: 4 },
+            992: { perView: 3 },
+            576: { perView: 2 },
+            0: { perView: 1 }
+          }
+        });
+    
+        glide.mount();
+    
+        // Counter element
+        const counterEl = section.querySelector('.counter-number');
+        if (counterEl) counterEl.textContent = 1; // start at 1
+    
+        // Animate counter on slide change
+        function animateCounter(newIndex) {
+          if (!counterEl) return;
+    
+          counterEl.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+          counterEl.style.transform = 'translateY(50%)';
+          counterEl.style.opacity = '0';
+    
+          setTimeout(() => {
+            counterEl.textContent = newIndex + 1;
+            counterEl.style.transform = 'translateY(-50%)';
+            counterEl.style.opacity = '1';
+    
+            setTimeout(() => {
+              counterEl.style.transform = 'translateY(0)';
+            }, 200);
+          }, 50);
+        }
+    
+        // Update counter on slide change
+        glide.on('run', () => {
+          animateCounter(glide.index % slidesCount);
+        });
+    
+        // Arrow buttons for this slider only
+        const nextBtn = section.querySelector('.slider-next');
+        const prevBtn = section.querySelector('.slider-prev');
+    
+        if (nextBtn) nextBtn.addEventListener('click', () => glide.go('>'));
+        if (prevBtn) prevBtn.addEventListener('click', () => glide.go('<'));
+      });
+    </script>
+    
+<!-- <script>
+  new Glide('.hero-glide', {
+    type: 'carousel',
+    autoplay: 4000,
+    animationDuration: 1200,
+    hoverpause: false,
+    perView: 1
+  }).mount();
+</script> -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.25/bundled/lenis.min.js"></script>
+
+<script>
+ // Initialize Lenis
+window.lenis = new Lenis({
+  duration: 1.2,
+  easing: t => t,
+  smooth: true
+});
+
+
+// Custom scrollbar
+const scrollbar = document.getElementById('scrollbar');
+const thumb = document.getElementById('thumb');
+
+function updateScrollbar() {
+  const scrollHeight = document.body.scrollHeight - window.innerHeight;
+  const thumbHeight = Math.max((window.innerHeight / document.body.scrollHeight) * window.innerHeight, 50);
+  thumb.style.height = `${thumbHeight}px`;
+
+  const scrollPercent = lenis.scroll / scrollHeight;
+  const translateY = scrollPercent * (window.innerHeight - thumbHeight);
+  thumb.style.transform = `translateY(${translateY}px)`;
+}
+
+// RAF loop for Lenis
+function raf(time) {
+  lenis.raf(time);
+  updateScrollbar();
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+</script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="transition.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
