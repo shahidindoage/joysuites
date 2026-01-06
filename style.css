@@ -1107,8 +1107,11 @@ footer {
  .text-and-image .image-content img{
   max-height: 300px !important;
  }
+ .hero-cta{
+  justify-content: center !important;
+ }
  .cta-container-hover{
-  justify-content: start !important;
+  justify-content: start;
  }
  .events-text {
    
