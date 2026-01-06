@@ -843,10 +843,11 @@ header.scrolled .logo a {
 }
 
 .gallery-cta {
-    font-size: 1.2rem;
-    color: #1F4D58;
+    font-size: 18px;
+    /* color: #1F4D58; */
     margin-top: 2.5rem;
     font-style: italic;
+    line-height: 20px;
 }
 
 .cta-section {
