@@ -198,7 +198,7 @@ header.scrolled .logo a {
     margin: auto;
    
     font-size: 2.0rem;
-    color: #F9F1EB;
+    color: #fcc256;
     transition: opacity 0.3s ease, transform 0.3s ease;
   }
   
@@ -592,7 +592,25 @@ header.scrolled .logo a {
     position: relative;
     z-index: 2;
     /* height: 174px; */
+    display: flex;
+    flex-direction: column;
 }
+
+p.slider-1-p-new {
+  display: -webkit-box;       /* Required for line clamp */
+  -webkit-line-clamp: 2;      /* Number of lines to show */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 0px !important;
+   background: transparent !important;
+   text-align: left !important;
+   padding: 0px !important;
+}
+
 .outer-arrow {
     display: flex;
     justify-content: end;
@@ -738,6 +756,7 @@ header.scrolled .logo a {
 /* Text and Image Section */
 .text-and-image {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
     gap: 4rem;
     padding: 6rem 3rem;
@@ -1089,18 +1108,29 @@ footer {
     color: #8B6F40;
     transform: scale(0.8);
 }
-
+.event-content1{
+  flex-direction: row-reverse;gap: 40px;
+}
+.sec1{
+  padding-top: 0px;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
         padding: 1rem 1.5rem;
         width: calc(100% - 3rem);
     }
+    .sec1{
+  padding-top: 96px;
+}
  .img-grid-inner{
   display: flex !important;
   flex-wrap: wrap !important;
   margin-left: -13% !important;
   width: 350px !important;
+ }
+ .event-content1{
+  flex-direction: column-reverse;
  }
  .text-left{
   text-align: left !important;
@@ -1732,9 +1762,9 @@ header.scrolled .header-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    gap: 4rem;
+    
 }
 
 .events-text {
@@ -1809,3 +1839,182 @@ header.scrolled .header-content {
         font-size: 1.1rem;
     }
 }
+/* Logo */
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+/* Logo Image */
+.logo img {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+/* Logo Text */
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fcc256;
+  letter-spacing: 2px;
+}
+
+/* Shrink logo on scroll */
+header.scrolled .logo img {
+  height: 36px;
+}
+
+header.scrolled .logo-text {
+  font-size: 1.4rem;
+}
+
+/* Optional hover (very subtle) */
+.logo a:hover img {
+  transform: scale(1.05);
+}
+/* About JoySuite Section */
+.about-joysuite-cards {
+  background: #F9F1EB;
+  padding: 7rem 2rem;
+}
+
+.about-joysuite-cards .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Layout: Content left, cards right */
+.about-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr; /* content left, cards right */
+ 
+  align-items: start;
+}
+
+/* Right – Cards (2 per row) */
+.philosophy-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+
+/* Card */
+.philosophy-card {
+  background: #ffffff;
+  border: 1px solid rgba(31, 77, 88, 0.12);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* vertical content */
+  gap: 0.8rem;
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+/* Card Hover Effect - Green */
+.philosophy-card:hover {
+  border-color: #1F4D58;
+    background-color: #1F4D58;
+}
+
+.philosophy-card i {
+  font-size: 1.5rem;
+  color: #1F4D58;
+  margin-bottom: 0.4rem;
+  transition: color 0.3s ease;
+}
+
+.philosophy-card:hover i {
+  color: #ffffff;
+}
+
+.philosophy-card h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1F4D58;
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.philosophy-card:hover h4 {
+  color: #ffffff;
+}
+
+.philosophy-card p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(31, 77, 88, 0.85);
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.philosophy-card:hover p {
+  color: #ffffff;
+}
+
+/* Margin adjustments for 1st & 3rd card */
+.philosophy-card:nth-child(1),
+.philosophy-card:nth-child(3) {
+  margin-top: -10px;
+}
+
+/* Last card default hover effect */
+.philosophy-card:last-child {
+    border-color: #1F4D58;
+    background-color: #1F4D58;
+}
+
+.philosophy-card:last-child i,
+.philosophy-card:last-child h4,
+.philosophy-card:last-child p {
+  color: #ffffff;
+}
+
+/* Left – Content */
+.about-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #1F4D58;
+  margin-bottom: 1.8rem;
+}
+
+.about-content .intro,
+.about-content .closing {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #181818;
+  max-width: 620px;
+}
+
+.about-content .intro {
+  margin-bottom: 2.2rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .philosophy-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .philosophy-card:nth-child(1),
+  .philosophy-card:nth-child(3) {
+    margin-top: 0; /* reset margin on mobile */
+  }
+
+  .about-content h2 {
+    font-size: 2.4rem;
+  }
+}
+
