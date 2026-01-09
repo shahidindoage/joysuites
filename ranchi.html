@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoySuite</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.css">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet"> -->
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  </head>
+<body data-barba="wrapper">
+
+  <div id="page-overlay"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-content">
+    <div class="logo-name">
+      <h1 class="site-name kings-regular">JOYSUITE</h1>
+    </div>
+    <h3 class="subheading">Find Your Perfect Property</h3>
+    <div class="line-loader">
+      <div class="line"></div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Stair Transition -->
+<div class="stair-transition">
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+  <div class="step"></div>
+</div>
+
+
+
+  <div id="scrollbar">
+    <div id="thumb"></div> <!-- real thumb element -->
+  </div>
+ 
+  
+          <header>
+  <div class="header-content">
+    <div class="header-content-inner">
+
+      <div class="logo">
+        <a href="index.html">
+          <img src="logo1.png" alt="JoySuite Logo" />
+          <span class="logo-text playfair">JOYSUITE</span>
+        </a>
+      </div>
+
+      <!-- Menu Toggle Button -->
+      <button class="menu-toggle" id="menuBtn" aria-label="Menu">
+        <i class="fa-solid fa-bars"></i>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+    </div>
+    <div class="divider1"></div>
+  </div>
+</header>
+
+        
+        <!-- Fullscreen Navigation -->
+       <nav class="fullscreen-nav playfair" id="fullscreenNav">
+
+  <!-- MAIN MENU -->
+  <div class="menu-panel menu-main active">
+    <a href="#" class="open-submenu" data-target="villasMenu">
+  Villas <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="#" class="open-submenu" data-target="resortsMenu">Resorts
+  <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+    <a href="about.html">About Us</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- VILLAS PANEL -->
+  <div class="menu-panel menu-sub playfair" id="villasMenu">
+    <button class="back-btn playfair">Back</button>
+
+    <a href="mahabaleshwar.html">Mahabaleshwar</a>
+    <a href="#">Lonavala</a>
+    <a href="#">Pawana</a>
+    <a href="#">Alibaug</a>
+    <a href="goa.html">Goa</a>
+    <a href="#">Panvel</a>
+    <a href="#">Junnar</a>
+    <a href="#">Karjat</a>
+  </div>
+
+  <!-- RESORTS PANEL -->
+  <div class="menu-panel menu-sub playfair" id="resortsMenu">
+    <button class="back-btn playfair">Back</button>
+
+    <a href="#">Hills & Valley Resort</a>
+    <a href="#">Silent Hills Resort</a>
+  </div>
+
+</nav>
+      <div id="page" data-barba="container" data-barba-namespace="about">
+        <!-- ALL your sections go here -->
+
+        
+        
+        <section class="listing-hero" style="background-image:url('bg.jpg');" >
+  <div class="listing-hero-overlay"></div>
+
+  <div class="listing-hero-content">
+    <h1 class="playfair">The Ranchi</h1>
+
+    <!-- <nav class="listing-breadcrumb DM">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span class="active">About Us</span>
+    </nav> -->
+  </div>
+</section>
+  
+    
+<div style=" background-color: #faf1eb;">
+
+       <!-- PROPERTY GALLERY -->
+
+
+<section class="property-gallery" data-scroll-section>
+  <div class="container" style="max-width:1400px; margin:0 auto;padding-top: 3rem;">
+
+    <!-- MAIN GLIDE SLIDER -->
+    <div class="glide main-glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide"><img src="bg.jpg" alt="Property Image"></li>
+          <li class="glide__slide"><img src="bg2.jpg" alt="Property Image"></li>
+          <li class="glide__slide"><img src="bg3.jpg" alt="Property Image"></li>
+          <li class="glide__slide"><img src="bg.jpg" alt="Property Image"></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- THUMBNAILS GLIDE SLIDER -->
+   <div class="glide thumb-glide" style="margin-top:10px; width: 500px;">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      
+      <li class="glide__slide">
+        <div class="thumb-inner">
+          <img src="bg.jpg" alt="" class="thumb active">
+        </div>
+      </li>
+
+      <li class="glide__slide">
+        <div class="thumb-inner">
+          <img src="bg2.jpg" alt="" class="thumb">
+        </div>
+      </li>
+
+      <li class="glide__slide">
+        <div class="thumb-inner">
+          <img src="bg3.jpg" alt="" class="thumb">
+        </div>
+      </li>
+
+      <li class="glide__slide">
+        <div class="thumb-inner">
+          <img src="bg.jpg" alt="" class="thumb">
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+  
+
+
+
+<!-- TABS NAV -->
+<div class="tabs-nav">
+  <a href="#overview" class="tab-link active">Overview</a>
+  <a href="#highlights" class="tab-link">Highlights</a>
+  <a href="#spaces" class="tab-link">Spaces</a>
+  <a href="#amenities" class="tab-link">Amenities</a>
+  <a href="#games" class="tab-link">Games</a>
+  <a href="#meals" class="tab-link">Meals</a>
+  <a href="#location" class="tab-link">Location</a>
+</div>
+
+<!-- OVERVIEW -->
+<section id="overview" class="product-section active">
+  <div class="container">
+    <h2 class="playfair">Overview</h2>
+    <p>The Ranch by Joy Stays, an enchanting 7 BHK haven, is cradled in the scenic beauty of Mahabaleshwar. Perfect for families, friends, or corporate retreats, it features 1 hall, 2 cottages, 5 rooms, and 8 baths, accommodating up to 15 guests.</p>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights" class="product-section">
+  <div class="container">
+    <h2 class="playfair">Highlights</h2>
+    <p>Offering a luxurious retreat with a private pool, the property seamlessly combines comfort with the captivating allure of nature. Guests can enjoy refined living amidst the mountains and relish a tranquil escape.</p>
+  </div>
+</section>
+
+<!-- SPACES & AMENITIES -->
+<section id="spaces" class="product-section">
+  <div class="container">
+    <h2 class="playfair">Spaces & Amenities</h2>
+    <div class="details-grid">
+      <div class="details-card">
+        <h3>Spaces</h3>
+        <ul>
+          <li>1 Hall</li>
+          <li>2 Cottages</li>
+          <li>5 Rooms</li>
+          <li>8 Baths</li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!--  AMENITIES -->
+<section id="amenities" class="product-section">
+  <div class="container">
+    <h2 class="playfair">Spaces & Amenities</h2>
+    <div class="details-grid">
+      
+      <div class="details-card">
+        <h3>Amenities</h3>
+        <ul>
+          <li>24/7 Care Taker</li>
+          <li>WiFi</li>
+          <li>Pet Friendly</li>
+          <li>Geyser</li>
+          <li>Private Car Parking</li>
+          <li>Swimming Pool</li>
+          <li>Wardrobe</li>
+          <li>+ 20 Amenities</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- GAMES -->
+<section id="games" class="product-section">
+  <div class="container">
+    <h2 class="playfair">Games</h2>
+    <ul>
+      <li>Badminton</li>
+      <li>Ludo & Snakes & Ladders</li>
+      <li>Cricket</li>
+      <li>Uno Cards</li>
+      <li>Carrom</li>
+      <li>Foosball</li>
+    </ul>
+  </div>
+</section>
+
+<!-- MEALS -->
+<section id="meals" class="product-section">
+  <div class="container">
+    <h2 class="playfair">Meals</h2>
+    <p>Guests can enjoy home-style Indian meals at ₹1500/+ or order meals from nearby restaurants.</p>
+    <ul>
+      <li>Veg</li>
+      <li>Non-Veg</li>
+    </ul>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location" class="product-section">
+  <div class="container">
+    <h2 class="playfair">Location</h2>
+    <div class="map-container">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31184.616092556826!2d73.65627615!3d17.923625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc31f63294c1d35%3A0x7d74f95c1a3d3d8c!2sMahabaleshwar!5e0!3m2!1sen!2sin!4v1700000000000" 
+        width="100%" 
+        height="400" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+</div>
+
+
+ 
+      <footer data-scroll-section>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Explore</h3>
+                <ul>
+                    <li><a href="#">Stay</a></li>
+                    <li><a href="#">Property</a></li>
+                    <li><a href="#">Ownership</a></li>
+                    <li><a href="#">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>123 Golf Course Lane<br>Citrus Farms, FL 12345</p>
+                <p>info@joysuits.com</p>
+                <p>(123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+  <h3>Follow Us</h3>
+  <div class="social-links">
+    <a href="#" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="#" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="#" aria-label="Twitter">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a>
+    <a href="#" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+  </div>
+</div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Joysuite. All Rights Reserved.</p>
+        </div>
+    </footer>
+      </div>
+    
+   
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Main Glide
+  const mainGlide = new Glide('.main-glide', {
+    type: 'carousel',
+    perView: 1,
+    autoplay: 4000,
+    hoverpause: true,
+    animationDuration: 800
+  }).mount();
+
+  // Thumbnail Glide
+  const thumbGlide = new Glide('.thumb-glide', {
+    type: 'carousel',
+    perView: 4,
+    focusAt: 0,
+    gap: 8,
+    breakpoints: {
+      992: { perView: 4 },
+      576: { perView: 3 }
+    }
+  }).mount();
+
+  const thumbTrack = document.querySelector('.thumb-glide .glide__slides');
+
+  function rotateThumbnails(newIndex) {
+    const thumbs = Array.from(thumbTrack.children);
+
+    // Remove current main thumbnail (first) and append at the end
+    const currentFirst = thumbs[0];
+    thumbTrack.appendChild(currentFirst);
+
+    // Add active class to the new first thumbnail
+    thumbTrack.querySelectorAll('img').forEach(img => img.classList.remove('active'));
+    thumbTrack.querySelector('li:first-child img').classList.add('active');
+  }
+
+  // Sync main glide with thumbnail rotation
+  mainGlide.on('run.after', () => {
+    rotateThumbnails(mainGlide.index % thumbTrack.children.length);
+  });
+
+  // Click thumbnail to go to main slide
+  thumbTrack.querySelectorAll('li img').forEach((thumb, i) => {
+    thumb.addEventListener('click', () => {
+      mainGlide.go('=' + i);
+      // Rotate thumbnails immediately
+      rotateThumbnails(i);
+    });
+  });
+
+  // Initialize first active
+  thumbTrack.querySelector('li:first-child img').classList.add('active');
+
+});
+</script>
+
+<script>
+const tabLinks = document.querySelectorAll('.tab-link');
+const sections = document.querySelectorAll('.product-section');
+
+tabLinks.forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const targetId = link.getAttribute('href').substring(1);
+    const targetSection = document.getElementById(targetId);
+    if (!targetSection) return;
+
+    // Remove active class from all sections
+    sections.forEach(sec => sec.classList.remove('active'));
+    targetSection.classList.add('active');
+
+    // Update active tab
+    tabLinks.forEach(l => l.classList.remove('active'));
+    link.classList.add('active');
+
+    // Optional: Scroll smoothly to section (if needed)
+    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Optional: Highlight tab on scroll
+window.addEventListener('scroll', () => {
+  let scrollPos = window.scrollY + 200; // header offset
+  sections.forEach(section => {
+    const top = section.offsetTop;
+    const bottom = top + section.offsetHeight;
+    if (scrollPos >= top && scrollPos < bottom) {
+      tabLinks.forEach(l => l.classList.remove('active'));
+      const activeLink = document.querySelector(`.tab-link[href="#${section.id}"]`);
+      if (activeLink) activeLink.classList.add('active');
+    }
+  });
+});
+
+</script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.25/bundled/lenis.min.js"></script>
+
+<script>
+ // Initialize Lenis
+window.lenis = new Lenis({
+  duration: 1.2,
+  easing: t => t,
+  smooth: true
+});
+
+
+// Custom scrollbar
+const scrollbar = document.getElementById('scrollbar');
+const thumb = document.getElementById('thumb');
+
+function updateScrollbar() {
+  const scrollHeight = document.body.scrollHeight - window.innerHeight;
+  const thumbHeight = Math.max((window.innerHeight / document.body.scrollHeight) * window.innerHeight, 50);
+  thumb.style.height = `${thumbHeight}px`;
+
+  const scrollPercent = lenis.scroll / scrollHeight;
+  const translateY = scrollPercent * (window.innerHeight - thumbHeight);
+  thumb.style.transform = `translateY(${translateY}px)`;
+}
+
+// RAF loop for Lenis
+function raf(time) {
+  lenis.raf(time);
+  updateScrollbar();
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+</script>
+<script src="https://unpkg.com/@barba/core"></script>
+<script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+<script src="transition.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

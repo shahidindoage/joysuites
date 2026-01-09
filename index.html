@@ -74,13 +74,48 @@
 
         
         <!-- Fullscreen Navigation -->
-        <nav class="fullscreen-nav playfair" id="fullscreenNav">
-          <a href="#">Villas</a>
-          <a href="#">Resorts</a>
-          <a href="about.html">About Us</a>
-          <a href="#">Blog</a>
-          <a href="#">Contact</a>
-        </nav>
+       <nav class="fullscreen-nav playfair" id="fullscreenNav">
+
+  <!-- MAIN MENU -->
+  <div class="menu-panel menu-main active">
+    <a href="#" class="open-submenu" data-target="villasMenu">
+  Villas <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+<a href="#" class="open-submenu" data-target="resortsMenu">Resorts
+  <i class="fa-solid fa-arrow-right"></i>
+</a>
+
+    <a href="about.html">About Us</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- VILLAS PANEL -->
+  <div class="menu-panel menu-sub playfair" id="villasMenu">
+    <button class="back-btn playfair">Back</button>
+
+    <a href="mahabaleshwar.html">Mahabaleshwar</a>
+    <a href="#">Lonavala</a>
+    <a href="#">Pawana</a>
+    <a href="#">Alibaug</a>
+    <a href="goa.html">Goa</a>
+    <a href="#">Panvel</a>
+    <a href="#">Junnar</a>
+    <a href="#">Karjat</a>
+  </div>
+
+  <!-- RESORTS PANEL -->
+  <div class="menu-panel menu-sub playfair" id="resortsMenu">
+    <button class="back-btn playfair">Back</button>
+
+    <a href="#">Hills & Valley Resort</a>
+    <a href="#">Silent Hills Resort</a>
+  </div>
+
+</nav>
+
+
         
       <div id="page" data-barba="container" data-barba-namespace="home">
         <!-- ALL your sections go here -->
@@ -170,7 +205,7 @@
                   <h3 class="playfair">Best Villas at Mahabaleshwar</h3>
                   <p class="slider-1-p-new"> Experience serene hillside retreats with stunning valley views and luxurious comfort, perfect for a relaxing getaway.</p>
                 <div class="outer-arrow">
- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
+ <a href="mahabaleshwar.html" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a>
                  </div>
                 </div>
                 <div class="loader-line"></div>
@@ -656,7 +691,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
             <div class="footer-section">
                 <h3>Explore</h3>
                 <ul>
-                    <li><a href="#">Stay</a></li>
+                    <li><a href="mahabaleshwar.html">Stay</a></li>
                     <li><a href="#">Property</a></li>
                     <li><a href="#">Ownership</a></li>
                     <li><a href="#">Events</a></li>

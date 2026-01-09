@@ -1,48 +1,114 @@
-const header = document.querySelector('header');
-const headerContent = document.querySelector('.header-content');
-const hero = document.querySelector('.hero');
-let isScrolled = false;
+// // ================================
+// // HEADER + HERO STATE
+// // ================================
+// let header = null;
+// let headerContent = null;
+// let hero = null;
+// let listingHero = null;
 
-function handleHeaderScroll() {
-  const scrollY = window.scrollY;
-  const heroHeight = hero.offsetHeight - 50; // trigger a bit before hero ends
+// let isScrolled = false;
+// let lastScroll = 0;
 
-  if (scrollY > heroHeight && !isScrolled) {
-    isScrolled = true;
-    header.classList.add('scrolled');
-    header.classList.remove('hide');
-    headerContent.style.borderBottom = 'none'; // remove border
-    headerContent.style.paddingTop="15px";
-  } else if (scrollY <= heroHeight && isScrolled) {
-    isScrolled = false;
-    header.classList.remove('scrolled');
-    header.classList.remove('hide');
-    headerContent.style.paddingTop="15px";
-    // headerContent.style.borderBottom = '1px solid rgba(255,255,255,0.4)'; // restore border
-  }
-}
+// // ================================
+// // UPDATE HERO REFERENCES (BARBA SAFE)
+// // ================================
+// function updateHeroRefs(container = document) {
+//   header = document.querySelector('header');
+//   headerContent = document.querySelector('.header-content');
 
-// Hide header on scroll down (optional smooth hide before slide down)
-let lastScroll = 0;
-window.addEventListener('scroll', () => {
-  const currentScroll = window.scrollY;
+//   hero = container.querySelector('.hero');
+//   listingHero = container.querySelector('.listing-hero');
 
-  if (currentScroll > lastScroll && currentScroll > hero.offsetHeight) {
-    // scrolling down
-    header.classList.add('hide');
-  } else {
-    // scrolling up
-    header.classList.remove('hide');
-  }
+//   // Reset state on page change
+//   isScrolled = false;
+//   lastScroll = 0;
+// }
 
-  lastScroll = currentScroll;
-  handleHeaderScroll();
-});
+// // ================================
+// // SCROLL TRIGGER HEIGHT
+// // ================================
+// function getTriggerHeight() {
+//   // Listing hero → change background earlier
+//   if (listingHero) {
+//     return listingHero.offsetHeight * 0.35;
+//   }
 
-// If using Lenis smooth scroll
-if (window.lenis) {
-  lenis.on('scroll', () => handleHeaderScroll());
-}
+//   // Home hero → normal behavior
+//   if (hero) {
+//     return hero.offsetHeight - 50;
+//   }
 
-// Initial check on load
-handleHeaderScroll();
+//   // Fallback
+//   return 100;
+// }
+
+// // ================================
+// // HEADER STYLE SWITCH
+// // ================================
+// function handleHeaderScroll() {
+//   if (!header || !headerContent) return;
+
+//   const scrollY = window.scrollY;
+//   const triggerHeight = getTriggerHeight();
+
+//   if (scrollY > triggerHeight && !isScrolled) {
+//     isScrolled = true;
+//     header.classList.add('scrolled');
+//     header.classList.remove('hide');
+//     headerContent.style.borderBottom = 'none';
+//     headerContent.style.paddingTop = '15px';
+//   }
+
+//   if (scrollY <= triggerHeight && isScrolled) {
+//     isScrolled = false;
+//     header.classList.remove('scrolled', 'hide');
+//     headerContent.style.paddingTop = '15px';
+//   }
+// }
+
+// // ================================
+// // HIDE / SHOW ON SCROLL DIRECTION
+// // ================================
+// window.addEventListener('scroll', () => {
+//   if (!header) return;
+
+//   const currentScroll = window.scrollY;
+//   const triggerHeight = getTriggerHeight();
+
+//   // Hide on scroll down
+//   if (currentScroll > lastScroll && currentScroll > triggerHeight + 40) {
+//     header.classList.add('hide');
+//   } 
+//   // Show on scroll up
+//   else {
+//     header.classList.remove('hide');
+//   }
+
+//   lastScroll = currentScroll;
+//   handleHeaderScroll();
+// });
+
+// // ================================
+// // LENIS SUPPORT
+// // ================================
+// if (window.lenis) {
+//   lenis.on('scroll', () => {
+//     handleHeaderScroll();
+//   });
+// }
+
+// // ================================
+// // BARBA HOOK (CRITICAL)
+// // ================================
+// barba.hooks.afterEnter(({ next }) => {
+//   updateHeroRefs(next.container);
+//   handleHeaderScroll();
+// });
+
+// // ================================
+// // INITIAL LOAD
+// // ================================
+// document.addEventListener('DOMContentLoaded', () => {
+//   updateHeroRefs(document);
+//   handleHeaderScroll();
+// });
