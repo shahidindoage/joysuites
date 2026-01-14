@@ -60,20 +60,32 @@ function handleHeaderScroll() {
   const scrollY = window.scrollY;
   const triggerHeight = getTriggerHeight();
 
-  if (scrollY > triggerHeight && !isScrolled) {
-    isScrolled = true;
+  if (hero || listingHero) {
+    if (scrollY > triggerHeight && !isScrolled) {
+      isScrolled = true;
+      header.classList.add("scrolled");
+      header.classList.remove("hide");
+      headerContent.style.borderBottom = "none";
+      headerContent.style.paddingTop = "15px";
+    
+    }
+
+    if (scrollY <= triggerHeight && isScrolled) {
+      isScrolled = false;
+      header.classList.remove("scrolled", "hide");
+      headerContent.style.paddingTop = "15px";
+      header.style.backgroundColor = ""; // reset color when at top
+    }
+  } 
+  // If no hero/listingHero, always apply "scrolled" style
+  else {
     header.classList.add("scrolled");
-    header.classList.remove("hide");
     headerContent.style.borderBottom = "none";
     headerContent.style.paddingTop = "15px";
-  }
-
-  if (scrollY <= triggerHeight && isScrolled) {
-    isScrolled = false;
-    header.classList.remove("scrolled", "hide");
-    headerContent.style.paddingTop = "15px";
+    header.style.backgroundColor = "#204b59"; // <-- default green
   }
 }
+
 
 // ================================
 // HIDE / SHOW ON SCROLL DIRECTION
@@ -259,9 +271,98 @@ function initGlideSliders(container = document) {
   });
 }
 
-// ================================
-// BARBA INIT
-// ================================
+function initInteractiveElements(container = document) {
+  // -----------------------------
+  // 1. Thumbnail -> Main Image
+  // -----------------------------
+  const mainImage = container.querySelector("#mainImage");
+  const thumbs = container.querySelectorAll(".thumb");
+
+  thumbs.forEach(thumb => {
+    thumb.addEventListener("click", () => {
+      if(mainImage) mainImage.src = thumb.src;
+
+      thumbs.forEach(t => t.classList.remove("active"));
+      thumb.classList.add("active");
+    });
+
+    // Optional: hover scale effect
+    thumb.addEventListener("mouseenter", () => {
+      thumb.style.transform = "scale(1.05)";
+      thumb.style.transition = "transform 0.3s ease";
+    });
+    thumb.addEventListener("mouseleave", () => {
+      thumb.style.transform = "scale(1)";
+    });
+  });
+
+  // -----------------------------
+  // 2. Tabs
+  // -----------------------------
+  const tabs = container.querySelectorAll(".nav a");
+  const contents = container.querySelectorAll(".tab-content");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", e => {
+      e.preventDefault();
+      const target = tab.dataset.tab;
+
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      contents.forEach(section => {
+        section.classList.remove("active");
+        if (section.dataset.content === target) {
+          section.classList.add("active");
+        }
+      });
+
+      const nav = container.querySelector(".nav");
+      if (nav) {
+        window.scrollTo({
+          top: nav.offsetTop + 40,
+          behavior: "smooth"
+        });
+      }
+    });
+  });
+
+  // -----------------------------
+  // 3. FAQ Accordion
+  // -----------------------------
+  const faqItems = container.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+
+    if(question) {
+      question.addEventListener("click", () => {
+        faqItems.forEach(i => {
+          if (i !== item) i.classList.remove("active");
+        });
+
+        item.classList.toggle("active");
+      });
+    }
+  });
+
+  // -----------------------------
+  // 4. Spec Gallery Hover (image scale)
+  // -----------------------------
+  const specImages = container.querySelectorAll(".spec-row img");
+  specImages.forEach(img => {
+    img.addEventListener("mouseenter", () => {
+      img.style.transform = "scale(1.05)";
+      img.style.transition = "transform 0.5s ease";
+    });
+    img.addEventListener("mouseleave", () => {
+      img.style.transform = "scale(1)";
+    });
+  });
+}
+
+
+
 barba.init({
   transitions: [{
     name: "stairs-transition",
@@ -285,7 +386,6 @@ barba.init({
     },
     async enter({ next }) {
       gsap.set(next.container, { opacity: 0 });
-
       initMenu();
       updateHeroRefs(next.container);
       handleHeaderScroll();
@@ -306,6 +406,7 @@ barba.hooks.afterEnter(({ next }) => {
   handleHeaderScroll();
   initHeroSlider(next.container);
   initGlideSliders(next.container);
+  initInteractiveElements(next.container); // <-- ADD THIS
 });
 
 // ================================
@@ -314,4 +415,5 @@ barba.hooks.afterEnter(({ next }) => {
 document.addEventListener("DOMContentLoaded", () => {
   updateHeroRefs(document);
   handleHeaderScroll();
+   initInteractiveElements(document);
 });
