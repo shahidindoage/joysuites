@@ -1151,6 +1151,10 @@ footer {
 .social-links {
   display: flex;
 }
+.footer-section p i {
+    margin-right: 8px;
+    color: #f9f1eb; /* change color if needed */
+}
 
 .social-links a {
   width: 40px;
@@ -1191,6 +1195,30 @@ footer {
     border-top: 1px solid rgba(249, 241, 235, 0.2);
     font-size: 1rem;
     opacity: 0.7;
+}
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.footer-links {
+    margin-bottom: 18px;
+}
+
+.footer-links a {
+    color: #f9f1eb;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 6px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-links span {
+    color: #f9f1eb;
+    opacity: 0.6;
 }
 
 /* Swiper Customization */
@@ -3811,7 +3839,32 @@ i.fa-solid.fa-location-dot {
  align-items: center;
  flex-direction: column;
 }
-
+.properties-header {
+  max-width: 1200px;
+ display: flex;
+ justify-content: start;
+ align-items: start;
+ flex-direction: column;
+}
+.properties-header p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(31, 77, 88, 0.8);
+}
+.properties-header small {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+.properties-header h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
 .section-header small {
   display: block;
   font-size: 11px;
