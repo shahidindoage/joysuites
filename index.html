@@ -17,11 +17,372 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet"> -->
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-  </head>
+ 
+
+
+
+
+
+</head>
+
+ 
+  <style>
+
+
+/* ===== Section ===== */
+.testimonial-section {
+  padding: 60px 40px;
+  background: #E3D0C0;
+}
+
+/* ===== Header ===== */
+.testimonial-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial-title {
+  font-size: 32px;
+  color: #1a6b6b;
+  font-weight: 300;
+}
+
+.testimonial-controls {
+  display: flex;
+  gap: 15px;
+}
+
+.testimonial-arrow {
+  width: 43px;
+  height: 43px;
+  border-radius: 50%;
+  border: 2px solid #1a6b6b;
+  background: transparent;
+  color: #1a6b6b;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  display:inline-table;
+}
+
+.testimonial-arrow:hover {
+  background: #1a6b6b;
+  color: #fff;
+}
+
+/* ===== Slider ===== */
+.testimonial-wrapper {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.testimonial-slider {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease;
+}
+
+/* ===== Card ===== */
+.testimonial-card {
+  flex: 0 0 calc((100% / 3) - 20px);
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  height: 415px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-media {
+  position: relative;
+  height: 280px;
+}
+
+.testimonial-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-play {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(26,107,107,0.85);
+  color: #fff;
+  font-size: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-card h3 {
+  font-size: 18px;
+  color: #1a6b6b;
+  margin: 18px 18px 8px;
+}
+
+.testimonial-card p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 18px 18px;
+}
+.testimonial-card {
+  display: block;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #333;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* Video thumbnail */
+.testimonial-media {
+  position: relative;
+  height:46%;
+}
+
+.testimonial-media img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.testimonial-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: #fff;
+  background: rgba(0,0,0,0.3);
+}
+
+/* Text */
+.testimonial-card h3 {
+  padding: 14px 16px 4px;
+  font-size: 18px;
+}
+
+.testimonial-card p {
+  padding: 0 16px 16px;
+  font-size: 14px;
+  color: #666;
+}
+/* Bottom Progress Bar */
+.testimonial-card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  background:none;
+  border-radius: 1px;
+  overflow: hidden;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+/* Hover lift (optional) */
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Loader bar base */
+.card-loader {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Animated fill */
+.card-loader::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: #1f6f5c; /* change color if needed */
+  transition: width 0.6s ease;
+}
+@media (max-width: 768px) {
+  .testimonial-card {
+    border-radius: 12px;
+  }
+
+  .testimonial-card:hover {
+    transform: none; /* disable hover lift on mobile */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  }
+
+  .testimonial-play {
+    font-size: 36px;
+    opacity: 1; /* always visible for touch devices */
+  }
+
+  .testimonial-card h3 {
+    font-size: 16px;
+    margin: 12px 12px 4px;
+  }
+
+  .testimonial-card p {
+    font-size: 13px;
+    margin: 0 12px 14px;
+  }
+
+  .card-loader {
+    height: 3px; /* thinner loader on mobile */
+  }
+
+  /* Auto-fill loader on tap focus */
+  .testimonial-card:active .card-loader::before {
+    width: 100%;
+  }
+}
+
+
+/* On hover fill full width */
+.testimonial-card:hover .card-loader::before {
+  width: 100%;
+} 
+
+
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 40px 20px;
+  }
+
+  .testimonial-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .testimonial-title {
+    font-size: 24px;
+  }
+
+  .testimonial-card {
+    flex: 0 0 100%;
+  }
+
+  .testimonial-media {
+    height: 200px;
+  }
+}
+</style>
+<style>
+
+/* ===== Section ===== */
+.logo-marquee-section {
+  width: 100%;
+  background: #f9f1eb;
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+.logo-marquee-title {
+  text-align: center;
+  font-size: 28px;
+  color: #1a6b6b;
+  margin-bottom: 30px;
+  font-weight: 400;
+}
+
+/* ===== Marquee ===== */
+.logo-marquee {
+  position: relative;
+  width: 100vw;          /* FULL VIEWPORT WIDTH */
+  overflow: hidden;
+}
+
+/* ===== Track ===== */
+.logo-track {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  animation: logoScroll 25s linear infinite;
+}
+
+.logo-marquee:hover .logo-track {
+  animation-play-state: paused;
+}
+
+/* ===== Logo ===== */
+.logo-item {
+  flex-shrink: 0;
+}
+
+.logo-item img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: 0.3s ease;
+}
+
+.logo-item img:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* ===== Animation ===== */
+@keyframes logoScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .logo-item img {
+    height: 45px;
+  }
+  .logo-track {
+    gap: 40px;
+  }
+}
+</style>
 <body data-barba="wrapper">
 
   <div id="page-overlay"></div>
+<!-- Popup Overlay -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-box">
+    <button class="close-btn" onclick="closePopup()">✕</button>
 
+    <h2 class="playfair">Get in Touch</h2>
+    <form>
+      <input type="text" placeholder="Your Name" class="DM" required>
+      <input type="email" placeholder="Your Email" class="DM" required>
+      <input type="tel" placeholder="Phone Number" class="DM">
+      <!-- <textarea placeholder="Message"></textarea> -->
+      <button type="submit" class="submit1 DM">Submit</button>
+    </form>
+  </div>
+</div>
 <!-- Loader -->
 <div id="loader">
   <div class="loader-content">
@@ -57,7 +418,7 @@
       <div class="logo">
         <a href="index.html">
           <img src="logo1.png" alt="JoySuite Logo" />
-          <span class="logo-text playfair">JOYSUITE</span>
+          <span class="logo-text playfair">JOYSUITE HOSPITALITY</span>
         </a>
       </div>
 
@@ -112,16 +473,35 @@
     <a href="#">Hills & Valley Resort</a>
     <a href="#">Silent Hills Resort</a>
   </div>
-
 </nav>
+<!-- Mobile Bottom Navigation -->
+<div class="mobile-bottom-bar">
+  <a href="index.html">
+    <i class="fa fa-home"></i>
+    <small>Home</small>
+  </a>
 
+  <a href="goa.html">
+    <i class="fa fa-bed"></i>
+    <small>Rooms</small>
+  </a>
 
-        
+  <a href="about.html">
+    <i class="fa fa-info"></i>
+    <small>About</small>
+  </a>
+
+  <a href="ranchi.html">
+    <i class="fa fa-phone"></i>
+    <small>Contact</small>
+  </a>
+</div>
+
       <div id="page" data-barba="container" data-barba-namespace="home">
         <!-- ALL your sections go here -->
 
         
-       <section class="hero hero-slider" data-scroll-section>
+       <!-- <section class="hero hero-slider" data-scroll-section>
   <div class="glide hero-glide">
     <div class="glide__track" data-glide-el="track">
       <ul class="glide__slides">
@@ -138,7 +518,6 @@
     </div>
   </div>
 
-  <!-- Overlay Text -->
   <div class="hero-text">
     <h2 class="DM" style="font-size: 20px;">Welcome to JoySuite Hospitality</h2>
     <h1 class="playfair" style="font-size: 60px; margin-top: -10px;">Crafting Exceptional Luxury Experiences</h1>
@@ -147,34 +526,59 @@
                   <a href="#" class="animated-arrow-button" style="color: white;border-color: white;"><span><i class="fa-solid fa-arrow-right"></i></span></a>
               </div>
   </div>
+</section>   -->
+
+<section class="js-hero-section hero hero-slider">
+  <div class="glide js-hero-glide">
+    <div class="glide__track js-hero-track" data-glide-el="track">
+      <ul class="glide__slides js-hero-slides">
+        <li class="glide__slide js-hero-slide">
+          <img src="https://joystays.in/wp-content/uploads/2024/08/3-2.jpg" alt="">
+        </li>
+        <li class="glide__slide js-hero-slide">
+          <img src="https://joystays.in/wp-content/uploads/2024/08/1-2.jpg" alt="">
+        </li>
+        <li class="glide__slide js-hero-slide">
+          <img src="https://joystays.in/wp-content/uploads/2024/05/3-13.jpg" alt="">
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Overlay Text -->
+  <div class="js-hero-overlay">
+    <h2 class="js-hero-subtitle">Welcome to JoySuite Hospitality</h2>
+    <h1 class="js-hero-title">Crafting Exceptional Luxury Experiences</h1>
+
+   <div class="js-hero-cta-wrapper flex gap-4 justify-center mt-6">
+  <a href="#" class="hero-btn primary-btn playfair">Hospitality</a>
+  <a href="#" class="hero-btn secondary-btn playfair">Tourism</a>
+</div>
+  </div>
 </section>
 
-
-  
           <section class="content-section" data-scroll-section>
               <h2 class="playfair text-left">JoySuite</h2>
               <p class="course DM text-left">JoySuite Hospitality is a premium hospitality brand dedicated to managing and operating high-end luxury properties. With a commitment to service excellence, refined standards, and guest-centric experiences, JoySuite delivers elevated hospitality rooted in comfort, elegance, and attention to detail.</p>
-              <div class="cta-container-hover DM">
+              <!-- <div class="cta-container-hover DM">
                   <a href="#" class="learn-more-cta">Learn More</a>
                   <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
-              </div>
+              </div> -->
           </section>
   
-  <section class="slider-1-outer" data-scroll-section>
+  <!-- <section class="slider-1-outer" data-scroll-section>
     
     <div class="image-slider-section slider-1">
     <div class="slider-left">
       <div  class="slider-left-inner">
  <h2 class="playfair">Explore JoySuite Hospitality</h2>
-   <!-- <p class="slider-left-p-1 DM" >JoySuite Hospitality specializes in the management and operation of 5-star luxury hospitality properties across distinctive destinations. Our philosophy is built on: -->
-
-      <!-- Arrow buttons -->
+   
       <div class="slider-arrows">
         <button class="slider-prev">
           <i class="fa-solid fa-arrow-left"></i>
         </button>
   
-        <!-- Counter -->
+      
         <span class="slider-counter">
           <span class="counter-mask">
             <span class="counter-number">1</span>
@@ -191,10 +595,8 @@
       </div>
    
     </div>
-  <!-- <p class="slider-left-p DM" >JoySuite Hospitality specializes in the management and operation of 5-star luxury hospitality properties across distinctive destinations. Our philosophy is built on: -->
-
+ 
     <div class="slider-right">
-      <!-- Glide Slider -->
       <div class="glide">
         <div class="glide__track" data-glide-el="track">
           <ul class="glide__slides">
@@ -282,11 +684,78 @@
       </div>
     </div>
     </div>
-    <!-- <p class="DM slider-2-p" style="padding-bottom: 80px;    padding-top: 40px;">Every property managed by JoySuite reflects warmth, refinement, and memorable service. -->
-</p>
+   </p>
      
-  </section>
-  
+  </section> -->
+<section class="testimonial-section">
+  <div class="testimonial-header">
+    <h2 class="testimonial-title">Explore JoySuite Hospitality</h2>
+    <div class="testimonial-controls">
+      <button class="testimonial-arrow" id="prevBtn">
+        <i class="fa-solid fa-arrow-left"></i>
+      </button>
+      <button class="testimonial-arrow" id="nextBtn">
+        <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="testimonial-wrapper">
+    <div class="glide testimonial-glide">
+      <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+          <li class="glide__slide">
+            <div class="testimonial-card1">
+              <img src="https://joystays.in/wp-content/uploads/2024/05/2-11.jpg">
+              <h3>Best Villas at Mahabaleshwar</h3>
+              <p> Experience serene hillside retreats with stunning valley views and luxurious comfort, perfect for a relaxing getaway.</p>
+              <div class="outer-arrow">
+  <a href="#" class="animated-arrow-button1">
+    <span><i class="fa-solid fa-arrow-right"></i></span>
+  </a>
+</div>
+<div class="loader-line"></div>
+            </div>
+          </li>
+
+          <li class="glide__slide">
+            <div class="testimonial-card1">
+              <img src="https://joystays.in/wp-content/uploads/2024/07/4-1.jpg">
+              <h3>Luxury Villas in Lonavala</h3>
+              <p> Indulge in premium villas surrounded by lush greenery and waterfalls, offering a perfect blend of nature and luxury.</p>
+              <div class="outer-arrow">
+  <a href="#" class="animated-arrow-button1">
+    <span><i class="fa-solid fa-arrow-right"></i></span>
+  </a>
+</div>
+<div class="loader-line"></div>
+            </div>
+          </li>
+
+          <li class="glide__slide">
+            <div class="testimonial-card1">
+              <img src="https://joystays.in/wp-content/uploads/2024/05/3-13.jpg">
+              <h3>Goa’s Finest Villas</h3>
+              <p> Enjoy vibrant coastal life with private villas combining contemporary design and comfort near Goa’s top beaches.</p>
+              <div class="outer-arrow">
+  <a href="#" class="animated-arrow-button1">
+    <span><i class="fa-solid fa-arrow-right"></i></span>
+  </a>
+</div>
+<div class="loader-line"></div>
+            </div>
+          </li>
+
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 <section class="about-joysuite-cards" data-scroll-section>
   <div class="container">
 
@@ -295,54 +764,48 @@
       <!-- LEFT : Content -->
       <div class="about-content">
 
-  <h2>About JoySuite Hospitality</h2>
+        <h2>JoySuite Hospitality Pvt Ltd</h2>
+        <p class="subheading">
+          MICE Resorts, Premium Villas, Boutique Resorts, Tourism, Wellness
+        </p>
 
-  <p class="intro">
-    JoySuite Hospitality specializes in the management and operation of
-    5-star luxury hospitality properties across distinctive destinations.
-    Each property combines elegant design, exceptional service, and
-    thoughtfully curated experiences to ensure every guest feels
-    valued and inspired.
-  </p>
+        <p class="intro">
+          JoySuite Hospitality specializes in the management and operation of
+          5-star luxury hospitality properties across distinctive destinations.
+          Each property combines elegant design, exceptional service, and
+          thoughtfully curated experiences to ensure every guest feels
+          valued and inspired.
+        </p>
 
-  <p class="closing">
-    Every property managed by JoySuite reflects warmth, refinement,
-    and memorable service. From bespoke guest experiences to
-    sustainable and nature-conscious practices, JoySuite sets the
-    benchmark for luxury hospitality in every location it operates.
-  </p>
-<div class="cta-container-hover1">
-                    <a href="#" class="learn-more-cta">Learn More</a>
-                    <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
-                </div>
-</div>
+        <p class="closing">
+          Every property managed by JoySuite reflects warmth, refinement,
+          and memorable service. From bespoke guest experiences to
+          sustainable and nature-conscious practices, JoySuite sets the
+          benchmark for luxury hospitality in every location it operates.
+        </p>
 
+        <div class="cta-container-hover1">
+          <a href="#" class="learn-more-cta">Learn More</a>
+          <!-- <a href="#" class="animated-arrow-button">
+            <span><i class="fa-solid fa-arrow-right"></i></span>
+          </a> -->
+        </div>
 
-      <!-- RIGHT : Philosophy Cards -->
+      </div>
+
+      <!-- RIGHT : Cards -->
       <div class="philosophy-cards">
 
-        <div class="philosophy-card">
-          <i class="fa-solid fa-user-tie"></i>
-          <h4>Personalized Guest Experiences</h4>
-          <p>Thoughtfully curated services tailored to every guest.</p>
+        <div class="philosophy-card premium-card">
+          <div class="icon-circle"><i class="fa-solid fa-briefcase"></i></div>
+          <h4>MICE: Corporates</h4>
+          <p>Exclusive corporate events with tailored hospitality solutions and premium facilities.</p>
         </div>
 
-        <div class="philosophy-card">
-          <i class="fa-solid fa-gear"></i>
-          <h4>Operational Excellence</h4>
-          <p>Efficient systems ensuring seamless day-to-day operations.</p>
-        </div>
-
-        <div class="philosophy-card">
-          <i class="fa-solid fa-gem"></i>
-          <h4>Luxury Service Standards</h4>
-          <p>Refined service delivery aligned with global 5-star benchmarks.</p>
-        </div>
-
-        <div class="philosophy-card">
-          <i class="fa-solid fa-leaf"></i>
-          <h4>Sustainable Hospitality</h4>
-          <p>Responsible practices that respect nature and surroundings.</p>
+        <div class="philosophy-card premium-card">
+          <div class="icon-circle"><i class="fa-solid fa-heart"></i></div>
+          <h4>MICE: Weddings</h4>
+          <p>Elegant wedding experiences with refined décor, luxury services, and meticulous planning.</p>
         </div>
 
       </div>
@@ -352,6 +815,9 @@
   </div>
 </section>
 
+
+
+
 <section class="events-section sec1" data-scroll-section>
   <div class="events-content event-content1">
     <div class="events-text">
@@ -360,10 +826,10 @@
                   <p class="DM" style="color: #181818;">Located in the tranquil landscapes of Mulshi, Maharashtra, JoySuite proudly manages a 5-star luxury hospitality property surrounded by forests, serene views, and natural beauty.
 <br/><br/>
 Designed for travelers seeking exclusivity and relaxation, the property offers privacy, sophistication, and curated luxury experiences in harmony with nature.</p>
-                  <div class="cta-container-hover1">
+                  <!-- <div >
                     <a href="#" class="learn-more-cta">Learn More</a>
                     <a href="#" class="animated-arrow-button"><span><i class="fa-solid fa-arrow-right"></i></span></a>
-                </div>
+                </div> -->
     
     </div>
     <div class="events-image">
@@ -390,19 +856,18 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
               </div>
           </section> -->
   
-          <section class="slider-2-outer"  data-scroll-section>
+          <!-- <section class="slider-2-outer"  data-scroll-section>
             <div class="image-slider-section slider-2 image-grid-hover ">
  <div class="slider-left">
               <h2>Accommodation Experience</h2>
               <p style="line-height: 28px;">JoySuite Hospitality specializes in the management and operation of 5-star luxury hospitality properties across distinctive destinations. Our philosophy is built on:
 
-              <!-- Arrow buttons -->
+       
               <div class="slider-arrows">
                 <button class="slider-prev">
                   <i class="fa-solid fa-arrow-left"></i>
                 </button>
           
-                <!-- Counter -->
                 <span class="slider-counter">
                   <span class="counter-mask">
                     <span class="counter-number">1</span>
@@ -418,7 +883,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
             </div>
           
             <div class="slider-right">
-              <!-- Glide Slider -->
+    
               <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                   <ul class="glide__slides">
@@ -427,7 +892,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
                         <img class="slider-2-img"  src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?q=80&w=2070&auto=format&fit=crop" alt="Cozy living room">
                         <div class="image-item-content">
                             <h3>Deluxe Rooms</h3>
-                            <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
+                         
                             <a href="#" class="learn-more-cta">Learn More</a>
                             <div class="loader-line"></div>
                           </div>
@@ -439,7 +904,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
                         <img class="slider-2-img" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Modern house exterior">
                         <div class="image-item-content">
                             <h3>Premium Rooms with Scenic Views</h3>
-                            <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
+                            
                             <a href="#" class="learn-more-cta">Learn More</a>
                             <div class="loader-line"></div>
                           </div>
@@ -450,7 +915,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
                 <img class="slider-2-img"  src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071&auto=format&fit=crop" alt="Bedroom with a view">
                 <div class="image-item-content">
                     <h3>Private Villas with Spacious Terraces</h3>
-                    <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
+               
                     <a href="#" class="learn-more-cta">Learn More</a>
                     <div class="loader-line"></div>
                   </div>
@@ -463,7 +928,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
                 <img class="slider-2-img"  src="https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=2071&auto=format&fit=crop" alt="Bedroom with a view">
                 <div class="image-item-content">
                     <h3>Signature Suites with Jacuzzi</h3>
-                    <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p> -->
+                    
                     <a href="#" class="learn-more-cta">Learn More</a>
                     <div class="loader-line"></div>
                   </div>
@@ -477,8 +942,67 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
             </div>
              <p class="slider-2-p" style="padding-bottom: 80px;    padding-top: 40px;">Each accommodation is crafted to provide comfort, privacy, and refined luxury.
 </p>
-          </section>
+          </section> -->
           
+<section class="experience-section">
+  <div class="experience-container">
+
+    <!-- LEFT -->
+    <div class="exp-content">
+      <h2>Our Brands </h2>
+      <p>
+        JoySuite Hospitality specializes in refined luxury stays
+        with thoughtful design and comfort.
+      </p>
+
+      <div class="exp-arrows">
+        <button class="exp-arrow" id="prev">
+          <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <button class="exp-arrow" id="next">
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- RIGHT (GLIDE) -->
+   <div class="slider-wrapper">
+  <div class="glide experience-glide">
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
+
+        <div class="glide__slide slide">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+          <span class="box-content">
+            <p>Signature Suites with Jacuzzi</p>
+            <h1>Learn More</h1>
+          </span>
+        </div>
+
+        <div class="glide__slide slide">
+          <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511">
+          <span class="box-content">
+            <p>Luxury Living</p>
+            <h1>Learn More</h1>
+          </span>
+        </div>
+
+        <div class="glide__slide slide">
+          <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+          <span class="box-content">
+            <p>Modern Comfort</p>
+            <h1>Learn More</h1>
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</section>
+
   
          <section class="dining-section" data-scroll-section>
   <div class="dining-container">
@@ -515,7 +1039,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
 
 
   
-          <section class="slider-1-outer" data-scroll-section>
+          <!-- <section class="slider-1-outer" data-scroll-section>
     
     <div class="image-slider-section slider-1 image-gird" style="background-color: #f9f1eb;">
     <div class="slider-left">
@@ -530,9 +1054,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
               <img src="https://res.cloudinary.com/dnm6dyuaw/image/upload/v1767792447/Untitled_design_15_kjegtz.jpg" alt="Lush green fairway">
               <div class="image-item-content">
                 <h3>Luxury spa and wellness center</h3>
-                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
-                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
-              </div>
+               </div>
               <div class="loader-line"></div>
               <div class="loader-line1"></div>
             </div>
@@ -540,9 +1062,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
               <img src="https://res.cloudinary.com/dnm6dyuaw/image/upload/v1767792448/Untitled_design_14_x9aztb.jpg" alt="Lush green fairway">
               <div class="image-item-content">
                 <h3>Infinity swimming pool</h3>
-                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
-                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
-              </div>
+                </div>
               <div class="loader-line"></div>
               <div class="loader-line1"></div>
             </div>
@@ -550,9 +1070,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
               <img src="https://res.cloudinary.com/dnm6dyuaw/image/upload/v1767792447/Untitled_design_11_lmet2k.jpg" alt="Lush green fairway">
               <div class="image-item-content">
                 <h3>Yoga and meditation spaces</h3>
-                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
-                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
-              </div>
+                </div>
               <div class="loader-line"></div>
               <div class="loader-line1"></div>
             </div>
@@ -560,9 +1078,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
               <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070&auto=format&fit=crop" alt="Lush green fairway">
               <div class="image-item-content">
                 <h3>Guided nature walks and outdoor activities</h3>
-                <!-- <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p> -->
-                <!-- <a href="#" class="animated-arrow-button1"><span><i class="fa-solid fa-arrow-right"></i></span></a> -->
-              </div>
+                 </div>
               <div class="loader-line"></div>
               <div class="loader-line1"></div>
             </div>
@@ -570,7 +1086,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
     </div>
     <p class="DM" style="background-color: #f9f1eb;"></p>
      
-  </section>
+  </section> -->
   
           <!-- <section class="content-section text-and-image reverse" data-scroll-section>
               <div class="text-content">
@@ -586,9 +1102,67 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
                  <img src="https://api.cabotcapebreton.com/wp-content/uploads/2025/07/Untitled-design-1-960x540.png" alt="Person writing in a journal">
              </div>
          </section> -->
+  <!-- youtube video -->
   
+<section class="video-testimonial-section" style="background-color: #F9F1EB;">
+
+  <div class="video-testimonial-header">
+    <h2 class="video-testimonial-title">Testimonials</h2>
+    <div class="video-testimonial-controls">
+      <button class="video-testimonial-arrow" id="videoPrev"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="video-testimonial-arrow" id="videoNext"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </div>
+
+  <div class="video-testimonial-wrapper">
+    <div class="glide video-testimonial-glide">
+      <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides">
+
+          <a href="https://youtu.be/MODh6XgX-jI" target="_blank" class="glide__slide video-testimonial-card">
+            <div class="video-testimonial-media">
+              <img src="https://img.youtube.com/vi/MODh6XgX-jI/hqdefault.jpg">
+              <span class="video-testimonial-play">▶</span>
+            </div>
+            <h3>Lonavala Luxury Villas</h3>
+            <p>Premium villas surrounded by waterfalls.</p>
+            <span class="video-card-loader"></span>
+            <div class="loader-line1"></div>
+          </a>
+
+          <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank" class="glide__slide video-testimonial-card">
+            <div class="video-testimonial-media">
+              <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
+              <span class="video-testimonial-play">▶</span>
+            </div>
+            <h3>Kerala Backwater Villas</h3>
+            <p>Calm tropical villas amidst nature.</p>
+            <span class="video-card-loader"></span>
+            <div class="loader-line1"></div>
+          </a>
+
+          <a href="https://youtu.be/MODh6XgX-jI" target="_blank" class="glide__slide video-testimonial-card">
+            <div class="video-testimonial-media">
+              <img src="https://img.youtube.com/vi/MODh6XgX-jI/hqdefault.jpg">
+              <span class="video-testimonial-play">▶</span>
+            </div>
+            <h3>Goa Beach Villas</h3>
+            <p>Private villas near pristine beaches.</p>
+            <span class="video-card-loader"></span>
+            <div class="loader-line1"></div>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+
+
 <!-- Events & Corporate Experiences Section -->
-<section class="events-section">
+<!-- <section class="events-section">
   <div class="events-content">
     <div class="events-text">
       <h2>Events & Corporate Experiences</h2>
@@ -604,12 +1178,12 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
       <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Events & Corporate Experiences">
     </div>
   </div>
-</section>
+</section> -->
 
 
 
 
-         <section class="guest-gallery" data-scroll-section>
+         <!-- <section class="guest-gallery" data-scroll-section>
           <h2>Why Mulshi</h2>
            <p class="gallery-cta">Mulshi is among Maharashtra’s most sought-after luxury escape destinations, offering:</p>
      
@@ -652,7 +1226,32 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
               </div>
           </div>
           <p class="gallery-cta">JoySuite designs immersive experiences that allow guests to connect with the region’s beauty.</p>
-      </section>
+      </section> -->
+      <section class="logo-marquee-section">
+  <h2 class="logo-marquee-title">Our Corporate Clients</h2>
+
+  <div class="logo-marquee">
+    <div class="logo-track">
+
+      <!-- ORIGINAL LOGOS -->
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/Salesforce-logo-removebg-preview.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/JM-Financial.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/TIFC.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/IBIS-Hotels.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/Untitled-design.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/JM-Financial.png"></div>
+
+      <!-- DUPLICATE FOR INFINITE LOOP -->
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/Salesforce-logo-removebg-preview.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/JM-Financial.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/TIFC.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/IBIS-Hotels.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/Untitled-design.png"></div>
+      <div class="logo-item"><img src="https://joystays.in/wp-content/uploads/2024/07/JM-Financial.png"></div>
+
+    </div>
+  </div>
+</section>
      <section class="contact-luxury">
   <div class="container">
 
@@ -759,7 +1358,7 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
      
    
 
-    <script>
+  <script>
       // Select all slider sections
       const sliderSections = document.querySelectorAll('.image-slider-section');
     
@@ -827,18 +1426,10 @@ Designed for travelers seeking exclusivity and relaxation, the property offers p
         if (nextBtn) nextBtn.addEventListener('click', () => glide.go('>'));
         if (prevBtn) prevBtn.addEventListener('click', () => glide.go('<'));
       });
-    </script>
-    
-<!-- <script>
-  new Glide('.hero-glide', {
-    type: 'carousel',
-    autoplay: 4000,
-    animationDuration: 1200,
-    hoverpause: false,
-    perView: 1
-  }).mount();
-</script> -->
+    </script> 
 
+    
+    
 
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.25/bundled/lenis.min.js"></script>
 
@@ -872,8 +1463,11 @@ function raf(time) {
   requestAnimationFrame(raf);
 }
 requestAnimationFrame(raf);
-
 </script>
+
+
+
+
 <script src="https://unpkg.com/@barba/core"></script>
 <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
 <script src="transition.js"></script>

@@ -216,47 +216,79 @@ function initMenu() {
 // HERO GLIDE SLIDER
 // ================================
 let heroGlide = null;
+
 function initHeroSlider(container = document) {
-  const heroEl = container.querySelector(".hero-glide");
+  const heroEl = container.querySelector(".js-hero-glide");
   if (!heroEl) return;
 
+  // Destroy previous instance if exists
   if (heroGlide) heroGlide.destroy();
 
+  // Wait for images to load
   const images = heroEl.querySelectorAll("img");
   Promise.all([...images].map(img => img.complete || new Promise(r => { img.onload = img.onerror = r; })))
     .then(() => {
       heroGlide = new Glide(heroEl, {
         type: "carousel",
         perView: 1,
-        autoplay: 4000,
+        gap: 0,
+        autoplay: 3500,
         hoverpause: false,
-        animationDuration: 1200
+        animationDuration: 1200,
+        rewind: true
       });
       heroGlide.mount();
-      requestAnimationFrame(() => heroGlide.update());
     });
 }
+
+
 
 // ================================
 // IMAGE SLIDERS (CONTENT)
 // ================================
+// function initGlideSliders(container = document) {
+//   container.querySelectorAll(".image-slider-section").forEach(section => {
+//     const glideEl = section.querySelector(".glide");
+//     if (!glideEl) return;
+
+//     const slides = glideEl.querySelectorAll(".glide__slide").length;
+//     const glide = new Glide(glideEl, {
+//       type: "carousel",
+//       perView: 4,
+//       gap: 24,
+//       animationDuration: 700,
+//       breakpoints: {
+//         1200: { perView: 4 },
+//         992: { perView: 3 },
+//         576: { perView: 2 },
+//         0: { perView: 1 }
+//       }
+//     });
+
+//     glide.mount();
+
+//     const counter = section.querySelector(".counter-number");
+//     if (counter) counter.textContent = 1;
+
+//     glide.on("run", () => { if (counter) counter.textContent = (glide.index % slides) + 1; });
+
+//     section.querySelector(".slider-next")?.addEventListener("click", () => glide.go(">"));
+//     section.querySelector(".slider-prev")?.addEventListener("click", () => glide.go("<"));
+//   });
+// }
 function initGlideSliders(container = document) {
   container.querySelectorAll(".image-slider-section").forEach(section => {
     const glideEl = section.querySelector(".glide");
     if (!glideEl) return;
 
     const slides = glideEl.querySelectorAll(".glide__slide").length;
+
     const glide = new Glide(glideEl, {
       type: "carousel",
-      perView: 4,
-      gap: 24,
-      animationDuration: 700,
-      breakpoints: {
-        1200: { perView: 4 },
-        992: { perView: 3 },
-        576: { perView: 2 },
-        0: { perView: 1 }
-      }
+      perView: 1,          // ✅ one image at a time
+      gap: 0,              // ✅ full screen width
+      focusAt: "center",
+      animationDuration: 700
     });
 
     glide.mount();
@@ -264,7 +296,9 @@ function initGlideSliders(container = document) {
     const counter = section.querySelector(".counter-number");
     if (counter) counter.textContent = 1;
 
-    glide.on("run", () => { if (counter) counter.textContent = (glide.index % slides) + 1; });
+    glide.on("run", () => {
+      if (counter) counter.textContent = (glide.index % slides) + 1;
+    });
 
     section.querySelector(".slider-next")?.addEventListener("click", () => glide.go(">"));
     section.querySelector(".slider-prev")?.addEventListener("click", () => glide.go("<"));
@@ -361,6 +395,191 @@ function initInteractiveElements(container = document) {
   });
 }
 
+function initMobileBar() {
+  const links = document.querySelectorAll('.mobile-bottom-bar a');
+  if (!links.length) return;
+
+  const currentPath = window.location.pathname.replace(/\/$/, "");
+
+  links.forEach(link => {
+    const linkPath = new URL(link.href).pathname.replace(/\/$/, "");
+
+    // reset
+    link.classList.remove("active");
+
+    // match current URL
+    if (linkPath === currentPath) {
+      link.classList.add("active");
+    }
+
+    // bind click once
+    if (!link.dataset.bound) {
+      link.addEventListener("click", () => {
+        links.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+      link.dataset.bound = "true";
+    }
+  });
+}
+function showPopup() {
+  const popup = document.getElementById("popup");
+  if (!popup) return;
+
+  // Show popup with animation
+  popup.classList.add("active");
+}
+
+function closePopup() {
+  const popup = document.getElementById("popup");
+  if (!popup) return;
+
+  // Hide popup with transition
+  popup.classList.remove("active");
+}
+
+function triggerPopup(delay = 10000) {
+  setTimeout(showPopup, delay);
+}
+
+// ================================
+// TESTIMONIAL GLIDE SLIDER (NO CUT, BARBA SAFE)
+// ================================
+let testimonialGlide = null;
+
+function initTestimonialGlide(container = document) {
+  const glideEl = container.querySelector(".testimonial-glide");
+  if (!glideEl) return;
+
+  if (testimonialGlide) {
+    testimonialGlide.destroy();
+    testimonialGlide = null;
+  }
+
+  testimonialGlide = new Glide(glideEl, {
+    type: "carousel",
+    perView: 3,        // ✅ desktop 4
+    gap: 15,
+    animationDuration: 700,
+    rewind: false,
+    bound: true,      // ✅ prevents cut / overflow
+    peek: 0,          // ✅ no partial slide
+    autoplay: false,
+    hoverpause: false,
+    breakpoints: {
+      1024: { perView: 3 },
+      768: {
+        perView: 1,   // ✅ mobile full width
+        gap: 10
+      }
+    }
+  });
+
+  testimonialGlide.mount();
+
+  const nextBtn = container.querySelector("#nextBtn");
+  const prevBtn = container.querySelector("#prevBtn");
+
+  nextBtn?.addEventListener("click", () => testimonialGlide.go(">"));
+  prevBtn?.addEventListener("click", () => testimonialGlide.go("<"));
+}
+
+// ================================
+// EXPERIENCE GLIDE SLIDER (BARBA SAFE)
+// ================================
+let experienceGlide = null;
+
+function initExperienceGlide(container = document) {
+  const glideEl = container.querySelector(".experience-glide");
+  if (!glideEl) return;
+
+  // Destroy previous instance
+  if (experienceGlide) {
+    experienceGlide.destroy();
+    experienceGlide = null;
+  }
+
+  // Wait for images & layout
+  const images = glideEl.querySelectorAll("img");
+  Promise.all([...images].map(img => img.complete || new Promise(r => {
+    img.onload = img.onerror = r;
+  }))).then(() => {
+
+    experienceGlide = new Glide(glideEl, {
+      type: "carousel",
+      startAt: 0,
+      perView: 2,            // ✅ desktop = 2
+      gap: 30,
+      animationDuration: 700,
+      animationTimingFunc: "ease-in-out",
+      rewind: false,
+      bound: true,          // ✅ no cut
+      peek: 0,              // ✅ no partial slide
+      autoplay: false,
+      hoverpause: false,
+      breakpoints: {
+        1024: {
+          perView: 2,
+          gap: 20
+        },
+        768: {
+          perView: 1,       // ✅ mobile = 1 full width
+          gap: 0
+        }
+      }
+    });
+
+    experienceGlide.mount();
+
+    // External arrows (BARBA SAFE)
+    const nextBtn = container.querySelector("#next");
+    const prevBtn = container.querySelector("#prev");
+
+    if (nextBtn) nextBtn.replaceWith(nextBtn.cloneNode(true));
+    if (prevBtn) prevBtn.replaceWith(prevBtn.cloneNode(true));
+
+    const newNext = container.querySelector("#next");
+    const newPrev = container.querySelector("#prev");
+
+    newNext?.addEventListener("click", () => experienceGlide.go(">"));
+    newPrev?.addEventListener("click", () => experienceGlide.go("<"));
+  });
+}
+
+let videoTestimonialGlide = null;
+
+function initVideoTestimonialGlide(container = document) {
+  const glideEl = container.querySelector(".video-testimonial-glide");
+  if (!glideEl) return;
+
+  if (videoTestimonialGlide) {
+    videoTestimonialGlide.destroy();
+    videoTestimonialGlide = null;
+  }
+
+  videoTestimonialGlide = new Glide(glideEl, {
+    type: "carousel",
+    perView: 3,
+    gap: 30,
+    bound: true,
+    rewind: false,
+    autoplay: false,
+    hoverpause: false,
+    animationDuration: 700,
+    breakpoints: {
+      1024: { perView: 2, gap: 20 },
+      768: { perView: 1, gap: 10 }
+    }
+  });
+
+  videoTestimonialGlide.mount();
+
+  const nextBtn = container.querySelector("#videoNext");
+  const prevBtn = container.querySelector("#videoPrev");
+
+  nextBtn?.addEventListener("click", () => videoTestimonialGlide.go(">"));
+  prevBtn?.addEventListener("click", () => videoTestimonialGlide.go("<"));
+}
 
 
 barba.init({
@@ -376,6 +595,9 @@ barba.init({
       handleHeaderScroll();
       initHeroSlider(next.container);
       initGlideSliders(next.container);
+       initTestimonialGlide(next.container);
+       initExperienceGlide(next.container);
+       initVideoTestimonialGlide(next.container);
     },
     async leave({ current }) {
       document.getElementById("fullscreenNav")?.classList.remove("active");
@@ -391,7 +613,9 @@ barba.init({
       handleHeaderScroll();
       initHeroSlider(next.container);
       initGlideSliders(next.container);
-
+initTestimonialGlide(next.container);
+initExperienceGlide(next.container);
+initVideoTestimonialGlide(next.container);
       await stairsOut();
       gsap.to(next.container, { opacity: 1, duration: 0.4 });
     }
@@ -407,6 +631,11 @@ barba.hooks.afterEnter(({ next }) => {
   initHeroSlider(next.container);
   initGlideSliders(next.container);
   initInteractiveElements(next.container); // <-- ADD THIS
+  initMobileBar();
+  showPopupOnce();
+  initTestimonialGlide(next.container);
+  initExperienceGlide(next.container);
+  initVideoTestimonialGlide(next.container);
 });
 
 // ================================
@@ -416,4 +645,7 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeroRefs(document);
   handleHeaderScroll();
    initInteractiveElements(document);
+   initMobileBar();
+    triggerPopup(10000);
+  initTestimonialSlider(document);
 });
