@@ -422,6 +422,57 @@ function initMobileBar() {
     }
   });
 }
+
+// ================================
+// HERO CTA SMOOTH SCROLL (BARBA SAFE)
+// ================================
+function smoothScrollTo(targetY, duration = 1200) {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  let startTime = null;
+
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+  }
+
+  function animation(currentTime) {
+    if (!startTime) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    const eased = easeInOutCubic(progress);
+
+    window.scrollTo(0, startY + distance * eased);
+
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animation);
+    }
+  }
+
+  requestAnimationFrame(animation);
+}
+
+function initHeroCta(container = document) {
+  const btn = container.querySelector("#nextSectionBtn");
+  const overlay = container.querySelector(".js-hero-overlay");
+  if (!btn || !overlay) return;
+
+  // Remove any previous listeners safely
+  const newBtn = btn.cloneNode(true);
+  btn.replaceWith(newBtn);
+
+  newBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const heroSection = overlay.closest("section");
+    const nextSection = heroSection ? heroSection.nextElementSibling : null;
+    if (!nextSection) return;
+
+    const targetY = nextSection.getBoundingClientRect().top + window.scrollY;
+    smoothScrollTo(targetY, 1400);
+  });
+}
 function showPopup() {
   const popup = document.getElementById("popup");
   if (!popup) return;
@@ -598,6 +649,8 @@ barba.init({
        initTestimonialGlide(next.container);
        initExperienceGlide(next.container);
        initVideoTestimonialGlide(next.container);
+        initRoomsFilter(next.container);
+        initHeroCta(next.container);
     },
     async leave({ current }) {
       document.getElementById("fullscreenNav")?.classList.remove("active");
@@ -616,6 +669,8 @@ barba.init({
 initTestimonialGlide(next.container);
 initExperienceGlide(next.container);
 initVideoTestimonialGlide(next.container);
+      initRoomsFilter(next.container);
+      initHeroCta(next.container);
       await stairsOut();
       gsap.to(next.container, { opacity: 1, duration: 0.4 });
     }
@@ -636,6 +691,8 @@ barba.hooks.afterEnter(({ next }) => {
   initTestimonialGlide(next.container);
   initExperienceGlide(next.container);
   initVideoTestimonialGlide(next.container);
+  initRoomsFilter(next.container);
+  initHeroCta(next.container);
 });
 
 // ================================
@@ -649,3 +706,68 @@ document.addEventListener("DOMContentLoaded", () => {
     triggerPopup(10000);
   initTestimonialSlider(document);
 });
+
+// ================================
+// LISTING FILTER (BARBA SAFE)
+// ================================
+function initRoomsFilter(container = document) {
+
+  const search = container.querySelector("#jsySearch");
+  const location = container.querySelector("#jsyLocation");
+  const rooms = container.querySelector("#jsyRooms");
+  const baths = container.querySelector("#jsyBaths");
+  const cards = container.querySelectorAll(".jsy-listing-card");
+
+  // If page has no listing, stop safely
+  if (!search || !location || !rooms || !baths || !cards.length) return;
+
+  function filterCards() {
+    const s = search.value.toLowerCase();
+    const l = location.value;
+    const r = rooms.value;
+    const b = baths.value;
+
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+
+      const show =
+        text.includes(s) &&
+        (l === "all" || card.dataset.location === l) &&
+        (r === "all" || card.dataset.rooms === r) &&
+        (b === "all" || card.dataset.baths === b);
+
+      card.style.display = show ? "" : "none";
+    });
+  }
+
+  search.addEventListener("keyup", filterCards);
+  location.addEventListener("change", filterCards);
+  rooms.addEventListener("change", filterCards);
+  baths.addEventListener("change", filterCards);
+}
+  document.querySelectorAll('.nav-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const targetId = toggle.getAttribute('data-target');
+      const menu = document.getElementById(targetId);
+
+      // close others
+      document.querySelectorAll('.dropdown-menu').forEach(d => {
+        if (d !== menu) d.classList.remove('active');
+      });
+      document.querySelectorAll('.nav-toggle').forEach(t => {
+        if (t !== toggle) t.classList.remove('active');
+      });
+
+      toggle.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+  });
+
+  // click outside close
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.nav-item')) {
+      document.querySelectorAll('.dropdown-menu').forEach(d => d.classList.remove('active'));
+      document.querySelectorAll('.nav-toggle').forEach(t => t.classList.remove('active'));
+    }
+  });
+

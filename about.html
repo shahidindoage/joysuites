@@ -56,33 +56,71 @@
   </div>
  
   
-          <header>
-  <div class="header-content">
-    <div class="header-content-inner">
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
 
-      <div class="logo">
-        <a href="index.html">
-          <img src="logo1.png" alt="JoySuite Logo" />
-           <span class="logo-text playfair">JOYSUITE HOSPITALITY</span>
-        </a>
+        <div class="logo">
+          <a href="index.html">
+            <img src="logo1.png" alt="JoySuite Logo" />
+            <span class="logo-text playfair">JOYSUITE HOSPITALITY</span>
+          </a>
+        </div>
+
+        <!-- Menu Toggle Button -->
+        <!-- <button class="menu-toggle" id="menuBtn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </button> -->
+
+        <nav class="header-nav playfair">
+        
+          <!-- Villas dropdown -->
+          <div class="nav-item">
+            <button class="nav-toggle" data-target="villasDropdown">
+              Villas <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        
+            <div class="dropdown-menu" id="villasDropdown">
+              <a href="mahabaleshwar.html">Mahabaleshwar</a>
+              <a href="lonavala.html">Lonavala</a>
+              <a href="pawana.html">Pawana</a>
+              <a href="alibaug.html">Alibaug</a>
+              <a href="goa.html">Goa</a>
+              <a href="Panvel.html">Panvel</a>
+              <a href="Junnar.html">Junnar</a>
+              <a href="Chowk-Karjat.html">Karjat</a>
+            </div>
+          </div>
+        
+          <!-- Resorts dropdown -->
+          <div class="nav-item">
+            <button class="nav-toggle" data-target="resortsDropdown">
+              Resorts <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        
+            <div class="dropdown-menu" id="resortsDropdown">
+              <a href="hills&valleyResort.html">Hills & Valley Resort</a>
+              <a href="SilentHillsResort.html">Silent Hills Resort</a>
+            </div>
+          </div>
+        
+          <a href="/about.html">About</a>
+          <a href="contact.html">Contact</a>
+        
+        </nav>
+
+
+
       </div>
-
-      <!-- Menu Toggle Button -->
-      <button class="menu-toggle" id="menuBtn" aria-label="Menu">
-        <i class="fa-solid fa-bars"></i>
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
+      <div class="divider1"></div>
     </div>
-    <div class="divider1"></div>
-  </div>
-</header>
+  </header>
 
         
         <!-- Fullscreen Navigation -->
-       <nav class="fullscreen-nav playfair" id="fullscreenNav">
+       <!-- <nav class="fullscreen-nav playfair" id="fullscreenNav">
 
-  <!-- MAIN MENU -->
   <div class="menu-panel menu-main active">
     <a href="#" class="open-submenu" data-target="villasMenu">
   Villas <i class="fa-solid fa-arrow-right"></i>
@@ -93,41 +131,37 @@
 </a>
 
     <a href="about.html">About</a>
-    <a href="#">Blog</a>
-    <a href="#">Contact</a>
+    <a href="#">Blog</a> 
+    <a href="contact.html">Contact</a>
   </div>
-
-  <!-- VILLAS PANEL -->
   <div class="menu-panel menu-sub playfair" id="villasMenu">
     <button class="back-btn playfair">Back</button>
 
     <a href="mahabaleshwar.html">Mahabaleshwar</a>
-    <a href="#">Lonavala</a>
+    <a href="lonavala.html">Lonavala</a>
     <a href="pawana.html">Pawana</a>
-    <a href="#">Alibaug</a>
+    <a href="alibaug.html">Alibaug</a>
     <a href="goa.html">Goa</a>
-    <a href="#">Panvel</a>
-    <a href="#">Junnar</a>
-    <a href="#">Karjat</a>
+    <a href="Panvel.html">Panvel</a>
+    <a href="Junnar.html">Junnar</a>
+    <a href="Chowk-Karjat.html">Karjat</a>
   </div>
-
-  <!-- RESORTS PANEL -->
   <div class="menu-panel menu-sub playfair" id="resortsMenu">
     <button class="back-btn playfair">Back</button>
 
-    <a href="#">Hills & Valley Resort</a>
-    <a href="#">Silent Hills Resort</a>
+    <a href="hills&valleyResort.html">Hills & Valley Resort</a>
+    <a href="SilentHillsResort.html">Silent Hills Resort</a>
   </div>
 
   
-</nav>
+</nav> -->
 <div class="mobile-bottom-bar">
   <a href="index.html">
     <i class="fa fa-home"></i>
     <small>Home</small>
   </a>
 
-  <a href="goa.html">
+  <a href="rooms.html">
     <i class="fa fa-bed"></i>
     <small>Rooms</small>
   </a>
@@ -137,7 +171,7 @@
     <small>About</small>
   </a>
 
-  <a href="ranchi.html">
+  <a href="contact.html">
     <i class="fa fa-phone"></i>
     <small>Contact</small>
   </a>
@@ -272,20 +306,20 @@
             <div class="footer-section">
                 <h3>Menu</h3>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Rooms</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="rooms.html">Rooms</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Locations</h3>
                 <ul>
-                    <li><a href="#">Panchgani</a></li>
-                    <li><a href="#">Mahabaleshwar</a></li>
-                    <li><a href="#">Lonavala</a></li>
-                     <li><a href="#">Alibaug</a></li>
-                      <li><a href="#">Goa</a></li>
+                    <li><a href="hills&valleyResort.html">Panchgani</a></li>
+                    <li><a href="mahabaleshwar.html">Mahabaleshwar</a></li>
+                    <li><a href="lonavala.html">Lonavala</a></li>
+                     <li><a href="alibaug.html">Alibaug</a></li>
+                      <li><a href="goa.html">Goa</a></li>
                 </ul>
             </div>
           <div class="footer-section">
@@ -310,28 +344,28 @@
              <div class="footer-section">
   <h3>Follow Us</h3>
   <div class="social-links">
-    <a href="#" aria-label="Facebook">
+    <a href="https://www.facebook.com/joysuiteshospitality" aria-label="Facebook">
       <i class="fa-brands fa-facebook-f"></i>
     </a>
-    <a href="#" aria-label="Instagram">
+    <a href="https://www.instagram.com/joy.suites/" aria-label="Instagram">
       <i class="fa-brands fa-instagram"></i>
     </a>
-    <a href="#" aria-label="Twitter">
-      <i class="fa-brands fa-x-twitter"></i>
+    <a href="https://www.youtube.com/@JoySuiteshospitality" aria-label="youtube">
+      <i class="fa-brands fa-youtube"></i>
     </a>
-    <a href="#" aria-label="LinkedIn">
+    <a href="https://www.linkedin.com/company/joysuites-hospitality/" aria-label="LinkedIn">
       <i class="fa-brands fa-linkedin-in"></i>
     </a>
   </div>
 </div>
         </div>
         <div class="footer-bottom">
-            <div class="footer-links">
-        <a href="#">Privacy Policy</a>
+           <div class="footer-links">
+        <a href="https://joystays.in/privacy-policy/">Privacy Policy</a>
         <span>|</span>
-        <a href="#">Terms & Conditions</a>
+        <a href="https://joystays.in/terms-and-conditions/">Terms & Conditions</a>
         <span>|</span>
-        <a href="#">Cancellation Policy</a>
+        <a href="https://joystays.in/cancellation-policy/ ">Cancellation Policy</a>
     </div>
             <p>&copy; 2026 Joysuite. All Rights Reserved.</p>
         </div>

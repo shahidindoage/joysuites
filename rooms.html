@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JoySuite</title>
+   <link rel="icon" type="image/png" href="logo1.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/glide.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet"> -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+</head>
+
+<body data-barba="wrapper">
+
+  <div id="page-overlay"></div>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-content">
+      <div class="logo-name">
+        <h1 class="site-name kings-regular">JOYSUITE</h1>
+      </div>
+      <h3 class="subheading">Find Your Perfect Property</h3>
+      <div class="line-loader">
+        <div class="line"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Stair Transition -->
+  <div class="stair-transition">
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+    <div class="step"></div>
+  </div>
+
+
+
+  <div id="scrollbar">
+    <div id="thumb"></div> <!-- real thumb element -->
+  </div>
+
+
+  <header>
+    <div class="header-content">
+      <div class="header-content-inner">
+
+        <div class="logo">
+          <a href="index.html">
+            <img src="logo1.png" alt="JoySuite Logo" />
+            <span class="logo-text playfair">JOYSUITE HOSPITALITY</span>
+          </a>
+        </div>
+
+        <!-- Menu Toggle Button -->
+        <!-- <button class="menu-toggle" id="menuBtn" aria-label="Menu">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </button> -->
+
+        <nav class="header-nav playfair">
+        
+          <!-- Villas dropdown -->
+          <div class="nav-item">
+            <button class="nav-toggle" data-target="villasDropdown">
+              Villas <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        
+            <div class="dropdown-menu" id="villasDropdown">
+              <a href="mahabaleshwar.html">Mahabaleshwar</a>
+              <a href="lonavala.html">Lonavala</a>
+              <a href="pawana.html">Pawana</a>
+              <a href="alibaug.html">Alibaug</a>
+              <a href="goa.html">Goa</a>
+              <a href="Panvel.html">Panvel</a>
+              <a href="Junnar.html">Junnar</a>
+              <a href="Chowk-Karjat.html">Karjat</a>
+            </div>
+          </div>
+        
+          <!-- Resorts dropdown -->
+          <div class="nav-item">
+            <button class="nav-toggle" data-target="resortsDropdown">
+              Resorts <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        
+            <div class="dropdown-menu" id="resortsDropdown">
+              <a href="hills&valleyResort.html">Hills & Valley Resort</a>
+              <a href="SilentHillsResort.html">Silent Hills Resort</a>
+            </div>
+          </div>
+        
+          <a href="/about.html">About</a>
+          <a href="contact.html">Contact</a>
+        
+        </nav>
+
+
+
+      </div>
+      <div class="divider1"></div>
+    </div>
+  </header>
+
+
+  <!-- Fullscreen Navigation -->
+  <!-- <nav class="fullscreen-nav playfair" id="fullscreenNav">
+
+
+    <div class="menu-panel menu-main active">
+      <a href="#" class="open-submenu" data-target="villasMenu">
+        Villas <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <a href="#" class="open-submenu" data-target="resortsMenu">Resorts
+        <i class="fa-solid fa-arrow-right"></i>
+      </a>
+
+      <a href="about.html">About Us</a>
+      <a href="#">Blog</a> 
+      <a href="contact.html">Contact</a>
+    </div>
+
+
+    <div class="menu-panel menu-sub playfair" id="villasMenu">
+      <button class="back-btn playfair">Back</button>
+
+      <a href="mahabaleshwar.html">Mahabaleshwar</a>
+      <a href="lonavala.html">Lonavala</a>
+      <a href="pawana.html">Pawana</a>
+      <a href="alibaug.html">Alibaug</a>
+      <a href="goa.html">Goa</a>
+      <a href="Panvel.html">Panvel</a>
+      <a href="Junnar.html">Junnar</a>
+      <a href="Chowk-Karjat.html">Karjat</a>
+    </div>
+
+
+    <div class="menu-panel menu-sub playfair" id="resortsMenu">
+      <button class="back-btn playfair">Back</button>
+
+      <a href="hills&valleyResort.html">Hills & Valley Resort</a>
+      <a href="SilentHillsResort.html">Silent Hills Resort</a>
+    </div>
+
+  </nav> -->
+  <!-- Mobile Bottom Navigation -->
+  <div class="mobile-bottom-bar">
+    <a href="index.html">
+      <i class="fa fa-home"></i>
+      <small>Home</small>
+    </a>
+
+    <a href="rooms.html">
+      <i class="fa fa-bed"></i>
+      <small>Rooms</small>
+    </a>
+
+    <a href="about.html">
+      <i class="fa fa-info"></i>
+      <small>About</small>
+    </a>
+
+    <a href="contact.html">
+      <i class="fa fa-phone"></i>
+      <small>Contact</small>
+    </a>
+  </div>
+
+  <div id="page" data-barba="container" data-barba-namespace="rooms">
+    <!-- ALL your sections go here -->
+
+
+
+    <section class="listing-hero" style="background-image:url('bg.jpg');">
+      <div class="listing-hero-overlay"></div>
+
+      <div class="listing-hero-content">
+        <h1 class="playfair">Luxury Rooms</h1>
+
+        <nav class="listing-breadcrumb DM">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <!-- <a href="villas.html">Villas</a>
+          <span>/</span> -->
+          <span class="active">Rooms</span>
+        </nav>
+      </div>
+    </section>
+
+
+    <div class="jsy-listing-container jsy-listing-layout">
+
+      <!-- FILTER -->
+      <div class="jsy-listing-filter">
+        <h3>Filter Properties</h3>
+
+        <div class="jsy-listing-search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="jsySearch" placeholder="Search villa, location…">
+        </div>
+
+        <div class="jsy-listing-group">
+          <label>Location</label>
+          <select id="jsyLocation">
+            <option value="all">All</option>
+            <option value="Mahabaleshwar">Mahabaleshwar</option>
+            <option value="Lonavala">Lonavala</option>
+            <option value="Pawana">Pawana</option>
+            <option value="Alibaug">Alibaug</option>
+            <option value="Goa">Goa</option>
+            <option value="Panvel">Panvel</option>
+            <option value="Junnar">Junnar</option>
+            <option value="Karjat">Karjat</option>
+            <option value="Panchgani">Panchgani</option>
+            <option value="Manor">Manor</option>
+
+          </select>
+        </div>
+
+        <div class="jsy-listing-group">
+          <label>Rooms</label>
+          <select id="jsyRooms">
+            <option value="all">All</option>
+            <option value="3">3 Rooms</option>
+            <option value="4">4 Rooms</option>
+            <option value="5">5 Rooms</option>
+            <option value="10">10 Rooms</option>
+
+          </select>
+        </div>
+
+        <div class="jsy-listing-group">
+          <label>Baths</label>
+          <select id="jsyBaths">
+            <option value="all">All</option>
+            <option value="3">3 Baths</option>
+            <option value="4">4 Baths</option>
+            <option value="5">5 Baths</option>
+            <option value="10">10 Baths</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- LIST -->
+      <div class="jsy-listing-list" data-lenis-prevent>
+
+        <!-- Mahabaleshwar -->
+        <a class="jsy-listing-card" data-location="Mahabaleshwar" data-rooms="5" data-baths="8"
+          href="https://joystays.in/product/the-ranch/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/05/2-11.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">The Ranch</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Mahabaleshwar
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 8 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 5 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 15 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹15,000</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Lonavala -->
+        <a class="jsy-listing-card" data-location="Lonavala" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/utopia-villa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/2024/07/1-2.jpg')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Utopia Villa</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Lonavala
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 10 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹7,000</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <a class="jsy-listing-card" data-location="Lonavala" data-rooms="4" data-baths="4"
+          href="https://joystays.in/product/wastrova-by-joy-stays/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/08/8-2.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Wastrova Villa</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Lonavala
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 4 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 4 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 12 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹15,000</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <a class="jsy-listing-card" data-location="Lonavala" data-rooms="4" data-baths="4"
+          href="https://joystays.in/product/embera-mansion-new/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/07/4-1.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Embera Mansion</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Lonavala
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 4 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 4 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 12 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹8,000</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Pawana -->
+        <a class="jsy-listing-card" data-location="Pawana" data-rooms="5" data-baths="5"
+          href="https://joystays.in/product/sky-high-by-joy-stays/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/2024/08/3-1.jpg')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Sky High Villa</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Pawana
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 5 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 5 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 20 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹25,000</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Alibaug -->
+        <a class="jsy-listing-card" data-location="Alibaug" data-rooms="4" data-baths="4"
+          href="https://joystays.in/product/heritage-villa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/2024/08/Untitled-design-14.jpg')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Sky High Villa</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Alibaug
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 4 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 4 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 12 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹30,000.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Goa -->
+        <a class="jsy-listing-card" data-location="Goa" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/enchanted-grove-villa-vagator-goa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/05/4-11.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Enchanted Grove Villa (Vagator, Goa)</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Goa
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 12 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹85,999.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <a class="jsy-listing-card" data-location="Goa" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/azure-dream-villa-assagao-goa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/05/3-13.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Azure Dream Villa (Assagao, Goa)</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Goa
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 12 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹81,999.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <a class="jsy-listing-card" data-location="Goa" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/mystique-haven-villa-anjuna-goa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/2024/05/4-13.jpg')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Mystique Haven Villa (Anjuna, Goa)</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Goa
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 10 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹91,999.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <a class="jsy-listing-card" data-location="Goa" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/celestial-seclusion-villa-anjuna-goa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/05/5-13.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Celestial Seclusion Villa (Anjuna, Goa)</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Goa
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 10 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹94,999.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <a class="jsy-listing-card" data-location="Goa" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/seaside-serenade-villa-vagator-goa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/05/2-16.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Seaside Serenade Villa (Vagator, Goa)</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Goa
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 10 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹101,999.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <a class="jsy-listing-card" data-location="Goa" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/emerald-shores-villa-assagao-goa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/05/5-15.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Emerald Shores Villa (Assagao, Goa)</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Goa
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 10 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹105,999.000</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Panvel -->
+        <a class="jsy-listing-card" data-location="Panvel" data-rooms="4" data-baths="4"
+          href="https://joystays.in/product/white-triangle-villa/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/08/1-6.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">White Triangle Villa</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Panvel
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 4 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 4 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 12 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹15,000.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Junnar -->
+        <a class="jsy-listing-card" data-location="Junnar" data-rooms="3" data-baths="3"
+          href="https://joystays.in/product/aabancha-wada/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/08/1-7.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Aabancha Wada</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Junnar
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 3 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 3 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 12 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹12,000.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Karjat -->
+        <a class="jsy-listing-card" data-location="Karjat" data-rooms="4" data-baths="4"
+          href="https://joystays.in/product/solace-by-joy-suites/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/07/2-3.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Solace by Joy Stays</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Chowk, Karjat
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 4 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 4 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 20 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹12,000.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Resort -->
+        <!-- Panchgani -->
+        <a class="jsy-listing-card" data-location="Panchgani" data-rooms="10" data-baths="10"
+          href="https://joystays.in/product/signature-boutique-hotel/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/al_opt_content/IMAGE/joystays.in/wp-content/uploads/2024/05/1-6.jpg.bv.webp?bv_host=joystays.in')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Hills & Valley Resort</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Panchgani
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 10 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 10 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> 3 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹1,400.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+        <!-- Manor -->
+        <a class="jsy-listing-card" data-location="Manor" data-rooms="10" data-baths="10"
+          href="https://joystays.in/product/river-view-resort-by-joy-suites/">
+
+          <div class="jsy-listing-image"
+            style="background-image:url('https://joystays.in/wp-content/uploads/2024/07/12.jpg')">
+          </div>
+
+          <div class="jsy-listing-content">
+            <h3 class="jsy-listing-title">Silent Hills Resort</h3>
+
+            <div class="jsy-listing-location">
+              <i class="fa-solid fa-location-dot"></i> Manor
+            </div>
+
+            <div class="jsy-listing-meta">
+              <span><i class="fa-solid fa-bath"></i> 10 Baths</span>
+              <span><i class="fa-solid fa-door-open"></i> 10 Rooms</span>
+              <span><i class="fa-solid fa-user"></i> up to 2 Guests</span>
+            </div>
+
+            <div class="jsy-listing-amenities">
+              Pool · Wi-Fi · AC · Parking
+            </div>
+          </div>
+
+          <div class="jsy-listing-pricebox">
+            <div class="jsy-listing-amount">₹5,000.00</div>
+            <small>per night</small>
+            <button class="jsy-listing-btn">Book Now</button>
+          </div>
+
+        </a>
+      </div>
+    </div>
+
+
+
+    <footer data-scroll-section>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Locations</h3>
+          <ul>
+            <li><a href="hills&valleyResort.html">Panchgani</a></li>
+            <li><a href="mahabaleshwar.html">Mahabaleshwar</a></li>
+            <li><a href="lonavala.html">Lonavala</a></li>
+            <li><a href="alibaug.html">Alibaug</a></li>
+            <li><a href="goa.html">Goa</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact</h3>
+
+          <p>
+            <i class="fa-solid fa-location-dot" style="color: #f9f1eb;"></i>
+            Koregaon Park, Pune
+          </p>
+
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            bookings@joysuites.in
+          </p>
+
+          <p>
+            <i class="fa-solid fa-phone"></i>
+            +91 76668 54399
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+    <a href="https://www.facebook.com/joysuiteshospitality" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+    <a href="https://www.instagram.com/joy.suites/" aria-label="Instagram">
+      <i class="fa-brands fa-instagram"></i>
+    </a>
+    <a href="https://www.youtube.com/@JoySuiteshospitality" aria-label="youtube">
+      <i class="fa-brands fa-youtube"></i>
+    </a>
+    <a href="https://www.linkedin.com/company/joysuites-hospitality/" aria-label="LinkedIn">
+      <i class="fa-brands fa-linkedin-in"></i>
+    </a>
+  </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+       <div class="footer-links">
+        <a href="https://joystays.in/privacy-policy/">Privacy Policy</a>
+        <span>|</span>
+        <a href="https://joystays.in/terms-and-conditions/">Terms & Conditions</a>
+        <span>|</span>
+        <a href="https://joystays.in/cancellation-policy/ ">Cancellation Policy</a>
+    </div>
+        <p>&copy; 2026 Joysuite. All Rights Reserved.</p>
+      </div>
+    </footer>
+  </div>
+
+
+
+  <script>
+    // Select all slider sections
+    const sliderSections = document.querySelectorAll('.image-slider-section');
+
+    sliderSections.forEach(section => {
+      const glideEl = section.querySelector('.glide');
+      if (!glideEl) return;
+
+      // Count slides dynamically
+      const slidesCount = glideEl.querySelectorAll('.glide__slide').length;
+
+      // Update total slides counter
+      const totalEl = section.querySelector('.total-slides');
+      if (totalEl) totalEl.textContent = slidesCount;
+
+      // Initialize Glide
+      const glide = new Glide(glideEl, {
+        type: 'carousel',
+        perView: 4,
+        gap: 24,
+        // autoplay: 3000,
+        hoverpause: true,
+        animationDuration: 800,
+        breakpoints: {
+          1200: { perView: 4 },
+          992: { perView: 3 },
+          576: { perView: 2 },
+          0: { perView: 1 }
+        }
+      });
+
+      glide.mount();
+
+      // Counter element
+      const counterEl = section.querySelector('.counter-number');
+      if (counterEl) counterEl.textContent = 1; // start at 1
+
+      // Animate counter on slide change
+      function animateCounter(newIndex) {
+        if (!counterEl) return;
+
+        counterEl.style.transition = 'transform 0.2s ease, opacity 0.2s ease';
+        counterEl.style.transform = 'translateY(50%)';
+        counterEl.style.opacity = '0';
+
+        setTimeout(() => {
+          counterEl.textContent = newIndex + 1;
+          counterEl.style.transform = 'translateY(-50%)';
+          counterEl.style.opacity = '1';
+
+          setTimeout(() => {
+            counterEl.style.transform = 'translateY(0)';
+          }, 200);
+        }, 50);
+      }
+
+      // Update counter on slide change
+      glide.on('run', () => {
+        animateCounter(glide.index % slidesCount);
+      });
+
+      // Arrow buttons for this slider only
+      const nextBtn = section.querySelector('.slider-next');
+      const prevBtn = section.querySelector('.slider-prev');
+
+      if (nextBtn) nextBtn.addEventListener('click', () => glide.go('>'));
+      if (prevBtn) prevBtn.addEventListener('click', () => glide.go('<'));
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.25/bundled/lenis.min.js"></script>
+
+  <script>
+    // Initialize Lenis
+    window.lenis = new Lenis({
+      duration: 1.2,
+      easing: t => t,
+      smooth: true
+    });
+
+
+    // Custom scrollbar
+    const scrollbar = document.getElementById('scrollbar');
+    const thumb = document.getElementById('thumb');
+
+    function updateScrollbar() {
+      const scrollHeight = document.body.scrollHeight - window.innerHeight;
+      const thumbHeight = Math.max((window.innerHeight / document.body.scrollHeight) * window.innerHeight, 50);
+      thumb.style.height = `${thumbHeight}px`;
+
+      const scrollPercent = lenis.scroll / scrollHeight;
+      const translateY = scrollPercent * (window.innerHeight - thumbHeight);
+      thumb.style.transform = `translateY(${translateY}px)`;
+    }
+
+    // RAF loop for Lenis
+    function raf(time) {
+      lenis.raf(time);
+      updateScrollbar();
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+  </script>
+
+  <script src="https://unpkg.com/@barba/core"></script>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="transition.js"></script>
+  <script src="main.js"></script>
+
+</body>
+
+</html>
