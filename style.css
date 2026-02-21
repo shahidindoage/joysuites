@@ -73,6 +73,7 @@ html::-webkit-scrollbar {
     border-radius: 3px;
     pointer-events: none;
     z-index: 1000;
+    display: none;
   }
   
   /* Scrollbar thumb */
@@ -86,6 +87,7 @@ html::-webkit-scrollbar {
     height: 100px; /* initial, will update */
     transform: translateY(0);
     transition: background 0.3s;
+    display: none;
   }
   
     
